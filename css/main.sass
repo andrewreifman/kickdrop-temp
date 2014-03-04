@@ -131,7 +131,7 @@ textarea
 /*  Global styles
 /*-----------------------------------------------------------------------------------*/
 .section
-  padding: 40px
+  padding: 0 40px
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -139,7 +139,7 @@ textarea
 /*-----------------------------------------------------------------------------------*/
 .shoe-small
   position: fixed
-  right: 16px
+  right: -50px
   top: 50%
   margin-top: -155px
 
@@ -234,7 +234,7 @@ textarea
     margin-bottom: 50px
 
     p
-      max-width: 850px
+      max-width: 800px
       margin: 0 auto
 
   .theme-options
@@ -276,29 +276,25 @@ textarea
             height: 8px
             display: inline-block
             background-color: #647f32
-            top: -2px
+            top: -3px
             position: relative
 
         &.theme-1
           height: auto
-          margin-left: -420px
           top: 40px
           bottom: 40px
 
         &.theme-2
-          margin-left: -350px
           height: auto
           top: 20px
           bottom: 20px
 
         &.theme-3
-          margin-left: -150px
           height: auto
           top: 20px
           bottom: 20px
 
         &.theme-4
-          margin-left: -80px
           height: auto
           top: 40px
           bottom: 40px
@@ -310,6 +306,131 @@ textarea
 
     img
       margin: 0 15px
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  Drops
+/*-----------------------------------------------------------------------------------*/
+.drops
+  text-align: center
+
+  .left-col
+    display: inline-block
+    width: 482px
+    margin-right: 60px
+    vertical-align: middle
+
+    .text
+      text-align: left
+      margin-bottom: 40px
+
+      p
+        max-width: 800px
+        margin: 0 auto
+
+
+  .widget
+    border: 4px solid #06546f
+    border-radius: 8px
+    box-shadow: 0 8px 0 -4px rgba(0,0,0,.15)
+    height: 134px
+    width: 418px
+    float: left
+    display: block
+    cursor: move
+    // -webkit-transition: -webkit-transform .2s
+    // -moz-transition: -moz-transform .2s
+    // -ms-transition: -ms-transform .2s
+    // transition: transform .2s
+
+    &.half
+      width: 202px
+      margin: 0 12px
+
+    &.third
+      width: 130px
+      height: 130px
+      margin: 0 20px
+
+    &.animated
+      cursor: default
+      margin: -3px 0 0 -3px !important
+
+    &.ui-draggable-dragging
+      z-index: 9999
+
+    &.not-selected
+      // @include transform(scale(.9))
+
+    &.chart
+      margin: 0 0 20px 30px
+      background: url('../images/widget-chart.png') 0 0 no-repeat
+    &.weather
+      margin: 10px 20px 0 0
+      background: url('../images/widget-weather.png') 0 0 no-repeat
+    &.chat
+      background: url('../images/widget-chat.png') 0 0 no-repeat
+    &.profile
+      margin: 20px 0 10px 20px
+      background: url('../images/widget-profile.png') 0 0 no-repeat
+    &.calendar
+      background: url('../images/widget-calendar.png') 0 0 no-repeat
+    &.map
+      margin: 20px 0 0 12px
+      background: url('../images/widget-map.png') 0 0 no-repeat
+
+  .browser
+    display: inline-block
+    vertical-align: middle
+    width: 470px
+    height: 500px
+    background: #FFF
+    border-radius: 10px
+    overflow: hidden
+    border: 6px solid #06546f
+    box-shadow: 0 12px 0 -5px rgba(0,0,0,.15)
+
+    .browser-bar
+      width: 100%
+      height: 22px
+      background-color: #CCC
+      border-bottom: 4px solid #06546f
+      display: block
+      padding-left: 6px
+      text-align: left
+
+      span
+        border-radius: 50%
+        width: 8px
+        height: 8px
+        display: inline-block
+        background-color: #06546f
+        top: -3px
+        position: relative
+
+    .browser-content
+      padding: 20px 12px
+
+      .box
+        border: 3px dashed #b4cbd4
+        border-radius: 8px
+        height: 134px
+        width: 418px
+        float: left
+        display: block
+        margin: 0 7px
+
+        &.active
+          @include transition(background .2s)
+          background: #fff4ce
+
+        &.half
+          width: 202px
+
+        &.third
+          width: 130px
+          height: 130px
+          margin: 14px 7px
 
 
 /*-----------------------------------------------------------------------------------*/

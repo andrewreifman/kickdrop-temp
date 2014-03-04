@@ -12,7 +12,9 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fullPage.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
+
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <script type="text/javascript" src="//use.typekit.net/drr2ayh.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -25,7 +27,7 @@
   </head>
 
   <body>
-    <img src="images/shoe.png" class="shoe-small" width="50">
+    <img src="images/shoe-small.png" class="shoe-small" width="50">
 
     <div class="section intro">
       <div class="text">
@@ -115,10 +117,38 @@
     </div><!-- end section -->
 
     <div class="section drops">
-      <div class="text">
-        <h1>Drops for every occassion.</h1>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.</p>
+      <div class="left-col">
+        <div class="text">
+          <h1>Drops for every occassion.</h1>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.</p>
+        </div>
+
+        <div class="widgets clearfix">
+          <div class="widget chart" title="chart"></div>
+          <div class="widget third weather" title="weather"></div>
+          <div class="widget third chat" title="chat"></div>
+          <div class="widget third profile" title="profile"></div>
+          <div class="widget half calendar" title="calendar"></div>
+          <div class="widget half map" title="map"></div>
+        </div>
       </div>
+
+      <div class="browser">
+        <div class="browser-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="browser-content">
+          <div class="box half map" title="map"></div>
+          <div class="box half calendar" title="calendar"></div>
+          <div class="box third chat" title="chat"></div>
+          <div class="box third profile" title="profile"></div>
+          <div class="box third weather" title="weather"></div>
+          <div class="box chart" title="chart"></div>
+        </div>
+      </div><!-- end browser -->
     </div><!-- end section -->
 
     <div class="section signup">
@@ -141,35 +171,35 @@
         <a href="https://twitter.com/share" class="twitter-share-button" data-related="kickdropme" data-url="https://kickdrop.me" data-lang="en" data-count="none">Tweet</a>
         <div class="g-plusone" data-size="medium" data-annotation="none"></div>
       </div>
-    </div><!-- end section -->
 
-    <!-- Social links stuff -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-    <script type="text/javascript">
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script>
+      <!-- Social links stuff -->
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <!-- // <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script> -->
+      <script type="text/javascript">
+        // (function() {
+        //   var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        //   po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
+        //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        // })();
+      </script>
+    </div><!-- end section -->
 
     <!-- Google Analytics -->
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-41062279-2');ga('send','pageview');
+      // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      // e.src='//www.google-analytics.com/analytics.js';
+      // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      // ga('create','UA-41062279-2');ga('send','pageview');
     </script>
   </body>
 </html>
