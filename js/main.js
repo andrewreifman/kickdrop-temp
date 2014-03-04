@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+  // Fullpage scroll
+
   $.fn.fullpage({
     verticalCentered: true,
     css3: true,
@@ -26,19 +29,24 @@ $(document).ready(function() {
     }
   });
 
-  $('.widget').mousedown(function(){
-    var boxClass = $(this).attr('title');
-    $(".box." + boxClass + "").addClass('active animated rubberBand');
+
+  // Drag and drop widgets
+
+  $(".widgets .widget").each(function(){
+    $(this).mousedown(function(){
+      var boxClass = $(this).attr('title');
+      $(".box." + boxClass + "").addClass('active animated rubberBand');
+    });
+
+    $(this).mouseup(function(){
+      var boxClass = $(this).attr('title');
+      $(".box." + boxClass + "").removeClass('active animated rubberBand');
+    });
   });
 
-  $('.widget').mouseup(function(){
-    var boxClass = $(this).attr('title');
-    $(".box." + boxClass + "").removeClass('active animated rubberBand');
-  });
-
-  $(".widget").draggable({
+  $(".widgets .widget").draggable({
     revert: "invalid",
-    revertDuration: 500
+    revertDuration: 500,
   });
 
   $(".box").each(function(){

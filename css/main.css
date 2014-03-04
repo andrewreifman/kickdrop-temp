@@ -307,42 +307,56 @@ textarea {
       .drops .left-col .text p {
         max-width: 800px;
         margin: 0 auto; }
+  .drops .widget-container {
+    height: 134px;
+    width: 418px;
+    float: left;
+    border: 3px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 8px; }
+    .drops .widget-container.half {
+      width: 202px;
+      margin: 0 12px; }
+    .drops .widget-container.third {
+      width: 130px;
+      height: 130px;
+      margin: 0 20px; }
+    .drops .widget-container.chart {
+      margin: 0 0 20px 30px; }
+    .drops .widget-container.weather {
+      margin: 10px 20px 0 0; }
+    .drops .widget-container.profile {
+      margin: 20px 0 10px 20px; }
+    .drops .widget-container.map {
+      margin: 20px 0 0 12px; }
   .drops .widget {
     border: 4px solid #06546f;
     border-radius: 8px;
     box-shadow: 0 8px 0 -4px rgba(0, 0, 0, 0.15);
     height: 134px;
     width: 418px;
-    float: left;
     display: block;
-    cursor: move; }
+    cursor: move;
+    margin: -3px 0 0 -3px; }
     .drops .widget.half {
-      width: 202px;
-      margin: 0 12px; }
+      width: 202px; }
     .drops .widget.third {
       width: 130px;
-      height: 130px;
-      margin: 0 20px; }
+      height: 130px; }
     .drops .widget.animated {
-      cursor: default;
-      margin: -3px 0 0 -3px !important; }
+      cursor: default; }
     .drops .widget.ui-draggable-dragging {
       z-index: 9999; }
     .drops .widget.chart {
-      margin: 0 0 20px 30px;
       background: url("../images/widget-chart.png") 0 0 no-repeat; }
     .drops .widget.weather {
-      margin: 10px 20px 0 0;
       background: url("../images/widget-weather.png") 0 0 no-repeat; }
     .drops .widget.chat {
       background: url("../images/widget-chat.png") 0 0 no-repeat; }
     .drops .widget.profile {
-      margin: 20px 0 10px 20px;
       background: url("../images/widget-profile.png") 0 0 no-repeat; }
     .drops .widget.calendar {
       background: url("../images/widget-calendar.png") 0 0 no-repeat; }
     .drops .widget.map {
-      margin: 20px 0 0 12px;
       background: url("../images/widget-map.png") 0 0 no-repeat; }
   .drops .browser {
     display: inline-block;
@@ -379,7 +393,8 @@ textarea {
         width: 418px;
         float: left;
         display: block;
-        margin: 0 7px; }
+        margin: 0 7px;
+        -webkit-animation-duration: 0.8s; }
         .drops .browser .browser-content .box.active {
           -webkit-transition: background 0.2s;
           -moz-transition: background 0.2s;
