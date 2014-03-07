@@ -9,18 +9,11 @@ $(document).ready(function() {
     navigation: true,
     navigationPosition: 'right',
     anchors: ['intro', 'problem', 'themes', 'drops', 'finished', 'signup'],
-    scrollingSpeed: 0,
+    navigationTooltips: ['Intro', 'Problem', 'Themes', 'Drops', 'Signup'],
+    scrollingSpeed: 100,
     fixedElements: '.shoe-small',
-    onLeave: function(index){
-      if(index == '1'){
-        $('.shoe-small').delay(800).animate({right: '15px'}, 400, 'easeOutExpo');
-      }
-    },
     afterLoad: function(anchorLink){
-      if(anchorLink == 'intro'){
-        $('.shoe-small').delay(400).animate({right: '-50px'}, 300, 'easeInExpo');
-      }
-      if(anchorLink == 'themes'){
+      if(anchorLink === 'themes'){
         $('.theme-1').delay(1000).animate({'margin-left': '-420px'}, 300, 'easeOutBack');
         $('.theme-2').delay(1000).animate({'margin-left': '-350px'}, 300, 'easeOutBack');
         $('.theme-3').delay(1000).animate({'margin-left': '-150px'}, 300, 'easeOutBack');
@@ -60,6 +53,11 @@ $(document).ready(function() {
         $(".widget." + widgetClass + "").addClass("animated tada");
         $(".widget." + widgetClass + "").draggable("disable");
         $(ui.draggable).detach().css({top: 0,left: 0}).appendTo(this);
+        $(this).addClass('complete');
+
+        if ($('.browser-content .complete').length === 1) {
+          $('.drops').addClass('completed');
+        }
       }
     });
   });
