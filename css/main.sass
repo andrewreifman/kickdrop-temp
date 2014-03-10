@@ -74,6 +74,12 @@ textarea
   height: $height
   display: block
 
+@mixin animation-delay($time)
+  -webkit-animation-delay: $time
+  -moz-animation-delay: $time
+  -ms-animation-delay: $time
+  animation-delay: $time
+
 
 /*-----------------------------------------------------------------------------------*/
 /*  Global styles
@@ -101,10 +107,10 @@ textarea
     display: block
     float: left
     border-radius: 30px
-    box-shadow: inset 0 0 0 3px rgba(0,0,0,.35)
+    background-color: transparent
+    box-shadow: inset 0 0 0 3px rgba(0,0,0,.35), 0 0 0 0 rgba(0,0,0,.35)
     margin-right: 6px
-    @include box-sizing(content-box)
-    @include transition(all .15s)
+    @include transition(background-color .15s, box-shadow .1s)
 
     span
       width: 100%
@@ -135,8 +141,8 @@ textarea
       text-align: center
 
     &:hover
-      box-shadow: inset 0 0 0 3px rgba(0,0,0,.7)
-      background-color: rgba(255,255,255,.5)
+      box-shadow: inset 0 0 0 0 rgba(0,0,0,.35), 0 0 0 3px rgba(0,0,0,.35)
+      background-color: #FFF
       color: #000
 
       span
@@ -238,6 +244,7 @@ textarea
     @include position(absolute, 0 0 0 100%)
     margin: 0 0 0 60px
     width: 410px
+    @include animation-delay(.8s)
 
   .laptop
     @include bgImage("../images/laptop.png", 554px, 642px)
@@ -318,6 +325,7 @@ textarea
     width: 100%
     @include position(absolute, 0 0 100% 0)
     margin-bottom: 50px
+    @include animation-delay(1.5s)
 
     p
       max-width: 800px
@@ -389,6 +397,7 @@ textarea
     @include position(absolute, 100% 0 0 0)
     width: 100%
     margin-top: 45px
+    @include animation-delay(1.5s)
 
     img
       margin: 0 15px
@@ -410,6 +419,7 @@ textarea
     .text
       text-align: left
       margin-bottom: 40px
+      @include animation-delay(.8s)
 
       p
         max-width: 800px
@@ -586,6 +596,7 @@ textarea
   .text
     width: 100%
     margin-bottom: 50px
+    @include animation-delay(.8s)
 
     p
       max-width: 800px
@@ -604,7 +615,7 @@ textarea
 
       &[type="email"]
         border: none
-        background-color: rgba(0,0,0,.4)
+        background-color: rgba(0,0,0,.5)
         width: 100%
         border-radius: 10px 0 0 10px
         padding: 15px 20px
@@ -616,7 +627,7 @@ textarea
 
       &[type="submit"]
         border: 0
-        box-shadow: inset 0 0 0 3px rgba(0,0,0,.4)
+        box-shadow: inset 0 0 0 3px rgba(0,0,0,.5)
         background-color: transparent
         width: 140px
         border-radius: 0 10px 10px 0

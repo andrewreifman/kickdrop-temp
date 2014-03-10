@@ -37,8 +37,7 @@ html
         | Sign up
 
     .section.intro
-      .text
-        /! <img src="images/shoe.png" class="shoe-lg" width="68" />
+      .text.animated.bounceInDown
         h1 Kick-ass themes. Fresh.
         p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.
 
@@ -49,16 +48,16 @@ html
         .wrapper
           .coffee
             .wrapper
-              / .smoke
-              /   span.s0
-              /   span.s1
-              /   span.s2
-              /   span.s3
-              /   span.s4
-              /   span.s5
-              /   span.s6
-              /   span.s7
-              /   span.s8
+              .smoke
+                span.s0
+                span.s1
+                span.s2
+                span.s3
+                span.s4
+                span.s5
+                span.s6
+                span.s7
+                span.s8
 
           .hand
           .text
@@ -159,33 +158,18 @@ html
         div style="position: absolute; left: -5000px;"
           input name="b_425ab2b3e010a637cca296582_25af7aa38c" type="text" value=""
 
+      h2 Spread the word
       .share-buttons
-        .fb-like data-action="like" data-href="http://kickdrop.me" data-layout="button" data-share="false" data-show-faces="false"
-        a.twitter-share-button data-count="none" data-lang="en" data-related="kickdropme" data-url="https://kickdrop.me" href="https://twitter.com/share"
-        .g-plusone data-annotation="none" data-size="medium"
+        a.facebook-share href="javascript:fbShare('http://kickdrop.me', 'Kickdrop', 'Kick-ass free themes. Fresh drops', 'http://goo.gl/dS52U', 520, 350)"
+          | Share
+        a.twitter-share href="http://twitter.com/share?text=Kick-ass%20free%20themes.%20Fresh%20drops."
+          | Tweet
+        a.google-share href="https://plus.google.com/share?url=http://kickdrop.me" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600,left=300');return false;"
+          | Plus
 
-    /! Social links stuff
-    #fb-root
-    javascript:
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+        / a.google-share href="https://plus.google.com/share?url=http://kickdrop.me" onclick="javascript:googleShare(600,600);return false;"
+        /   | Plus
 
-    javascript:
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-
-    script type="text/javascript" src="https://apis.google.com/js/plusone.js"
-
-    javascript:
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
 
     javascript:
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

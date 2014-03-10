@@ -27,14 +27,23 @@ $(document).ready(function() {
         $('.logo .text').delay(800).animate({'margin-top': '0px'}, 200, 'easeOutBack');
         $('.intro').removeClass('intro-hidden');
       }
+      if(anchorLink == 'problem'){
+        $('.problem .text').addClass('animated bounceInRight');
+      }
       if(anchorLink == 'themes'){
-        $('.theme-1').delay(1000).animate({'margin-left': '-420px'}, 300, 'easeOutBack');
-        $('.theme-2').delay(1000).animate({'margin-left': '-350px'}, 300, 'easeOutBack');
-        $('.theme-3').delay(1000).animate({'margin-left': '-150px'}, 300, 'easeOutBack');
-        $('.theme-4').delay(1000).animate({'margin-left': '-80px'}, 300, 'easeOutBack');
+        $('.themes .text').addClass('animated bounceInDown');
+        $('.themes .logos').addClass('animated bounceInUp');
+        $('.theme-1').delay(800).animate({'margin-left': '-420px'}, 300, 'easeOutBack');
+        $('.theme-2').delay(800).animate({'margin-left': '-350px'}, 300, 'easeOutBack');
+        $('.theme-3').delay(800).animate({'margin-left': '-150px'}, 300, 'easeOutBack');
+        $('.theme-4').delay(800).animate({'margin-left': '-80px'}, 300, 'easeOutBack');
+      }
+      if(anchorLink == 'drops'){
+        $('.drops .text').addClass('animated bounceInLeft');
       }
       if(anchorLink == 'signup'){
         $('.bottom-buttons').delay(600).animate({'bottom': '-100px'}, 300, 'easeInBack');
+        $('.signup .text').addClass('animated bounceInUp');
       }
     }
   });
@@ -91,4 +100,33 @@ $(document).ready(function() {
       }
     });
   });
+
+  $('.twitter-share').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = (screen.width  - width)  / 2,
+        top    = (screen.height - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+
+    window.open(url, 'twitter', opts);
+
+    return false;
+  });
 });
+
+function fbShare(url, title, descr, image, winWidth, winHeight) {
+  var winTop = (screen.height / 2) - (winHeight / 2);
+  var winLeft = (screen.width / 2) - (winWidth / 2);
+  window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+}
+
+function googleShare(w,h) {
+  var left = (screen.width/2)-(w/2);
+  var top = (screen.height/2)-(h/2);
+  return window.open("https://plus.google.com/share?url=http://kickdrop.me,'','toolbar=no, menubar=no, scrollbars=yes, resizable=yes, width="+w+", height="+h+", top="+top+", left="+left);
+}
