@@ -49,6 +49,16 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/astronaut.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38864,
+		"inputAbbreviatedPath": "\/images\/astronaut.png",
+		"outputAbbreviatedPath": "\/images\/astronaut.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/bootstrap.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -69,6 +79,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/facebook.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1051,
+		"inputAbbreviatedPath": "\/images\/facebook.png",
+		"outputAbbreviatedPath": "\/images\/facebook.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/html5.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -76,6 +96,16 @@
 		"initialSize": 2329,
 		"inputAbbreviatedPath": "\/images\/html5.png",
 		"outputAbbreviatedPath": "\/images\/html5.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/kickdrop-text.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/kickdrop-text.png",
+		"outputAbbreviatedPath": "\/images\/kickdrop-text.png",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -129,6 +159,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/planet.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7739,
+		"inputAbbreviatedPath": "\/images\/planet.png",
+		"outputAbbreviatedPath": "\/images\/planet.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rocket.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16919,
+		"inputAbbreviatedPath": "\/images\/rocket.png",
+		"outputAbbreviatedPath": "\/images\/rocket.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/satellite.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5411,
+		"inputAbbreviatedPath": "\/images\/satellite.png",
+		"outputAbbreviatedPath": "\/images\/satellite.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/share.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 611,
+		"inputAbbreviatedPath": "\/images\/share.png",
+		"outputAbbreviatedPath": "\/images\/share.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/shoe-small.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -143,9 +213,39 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 5153,
+		"initialSize": 7325,
 		"inputAbbreviatedPath": "\/images\/shoe.png",
 		"outputAbbreviatedPath": "\/images\/shoe.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/spaceship.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5654,
+		"inputAbbreviatedPath": "\/images\/spaceship.png",
+		"outputAbbreviatedPath": "\/images\/spaceship.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/stars.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6041,
+		"inputAbbreviatedPath": "\/images\/stars.png",
+		"outputAbbreviatedPath": "\/images\/stars.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/twitter.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 979,
+		"inputAbbreviatedPath": "\/images\/twitter.png",
+		"outputAbbreviatedPath": "\/images\/twitter.png",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
