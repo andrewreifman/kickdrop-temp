@@ -127,7 +127,8 @@ textarea {
         background-position: center -50px; }
 
 .section {
-  padding: 0 40px; }
+  padding: 0 40px;
+  overflow: hidden; }
 
 /*----------------------------------------------------------------------------------- */
 /*  Pagination color override */
