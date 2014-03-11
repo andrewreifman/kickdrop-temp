@@ -57,7 +57,7 @@ $(document).ready(function() {
 
   $('.logo').mouseleave(function(){
     if($(".intro").is('.intro-hidden')){
-      $('.logo .text').animate({'margin-top': '-200px'}, 300, 'easeInBack');
+      $('.logo .text').stop().animate({'margin-top': '-200px'}, 300, 'easeInBack');
     }
   });
 
