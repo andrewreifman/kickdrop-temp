@@ -27,13 +27,19 @@ h1
   color: #FFF
   font-size: 42px
   font-weight: 900
-  letter-spacing: -0.01em
+  letter-spacing: -0.03em
   margin: 0 0 15px
   line-height: 1.1
+  -webkit-font-smoothing: antialiased
+
+h2
+  font-size: 1.4em
+  margin: .7em 0
+  color: rgba(0,0,0,.55)
 
 p
   color: #000
-  color: rgba(0,0,0,.6)
+  color: rgba(0,0,0,.65)
   font-size: 18px
   font-weight: 700
   margin: 0
@@ -80,6 +86,12 @@ textarea
   -ms-animation-delay: $time
   animation-delay: $time
 
+@mixin transition-delay($time)
+  -webkit-transition-delay: $time
+  -moz-transition-delay: $time
+  -ms-transition-delay: $time
+  transition-delay: $time
+
 
 /*-----------------------------------------------------------------------------------*/
 /*  Global styles
@@ -94,12 +106,13 @@ textarea
     margin-right: 10px
 
 .bottom-buttons
-  position: fixed
+  @include position(fixed, 0 0 15px 0px)
   z-index: 100
-  bottom: 15px
-  left: 0
   padding: 0 15px
   width: 100%
+
+  .wrapper
+    position: relative
 
   a
     width: 50px
@@ -121,12 +134,24 @@ textarea
       background-size: 50px 50px !important
       @include transition(all .2s)
 
-    &.share span
-      background: url("../images/share.png") center center repeat-y
+    &.share
+      span
+        background: url("../images/share.png") center center repeat-y
+      &.active
+        box-shadow: inset 0 0 0 0 rgba(0,0,0,.35), 0 0 0 3px rgba(0,0,0,.35)
+        background-color: #FFF
+        color: #000
+
+        span
+          opacity: 1
+          background-position: center -50px
+
     &.twitter span
       background: url("../images/twitter.png") center center repeat-y
     &.facebook span
       background: url("../images/facebook.png") center center repeat-y
+    &.google span
+      background: url("../images/google.png") center center repeat-y
 
     &.signup-btn
       width: auto
@@ -149,9 +174,38 @@ textarea
         opacity: 1
         background-position: center -50px
 
+  .share-btns
+    @include position(absolute, 0 0 6px 0px)
+
+    a
+      float: none
+      margin: 6px 0 0 -100px
+      @include transition(margin-left .25s cubic-bezier(0.175, 0.885, 0.320, 1.275))
+
+      &.twitter
+        @include transition-delay(0ms)
+      &.facebook
+        @include transition-delay(50ms)
+      &.google
+        @include transition-delay(100ms)
+
+    &.active
+      a
+        margin-left: 0
+
+        &.twitter
+          @include transition-delay(100ms)
+        &.facebook
+          @include transition-delay(50ms)
+        &.google
+          @include transition-delay(0ms)
+
 .section
   padding: 0 40px
   overflow: hidden
+
+.animated
+  opacity: 1 !important
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -200,6 +254,7 @@ textarea
   .text
     max-width: 850px
     margin: 0 auto
+    opacity: 0
 
     h1
       font-size: 60px
@@ -212,6 +267,43 @@ textarea
     @include bgImage("../images/astronaut.png", 179px, 282px)
     margin: 80px auto 0
     @include animation(spaceSpin 15s infinite linear)
+
+  .rocket
+    @include bgImage("../images/rocket.png", 94px, 154px)
+    // position: absolute
+    @include transform(rotate(-30deg))
+
+    .wrapper
+      position: relative
+
+      .exhaust
+        @include position(absolute, 0 0 0 0)
+
+  .spaceship
+    @include bgImage("../images/spaceship.png", 94px, 80px)
+    // position: absolute
+    @include transform(rotate(-10deg))
+
+    .wrapper
+      position: relative
+
+      .beams
+        @include position(absolute, 0 0 0 0)
+
+  .satellite
+    @include bgImage("../images/satellite.png", 198px, 88px)
+    // position: absolute
+    @include transform(rotate(15deg))
+
+    .wrapper
+      position: relative
+
+      .signal
+        @include position(absolute, 0 0 0 0)
+
+  .planet
+    @include bgImage("../images/planet.png", 108px, 70px)
+    // position: absolute
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -246,11 +338,12 @@ textarea
     margin: 0 0 0 60px
     width: 410px
     @include animation-delay(.8s)
+    opacity: 0
 
   .laptop
     @include bgImage("../images/laptop.png", 554px, 642px)
     @include image2x("../images/laptop@2x.png", 555px, 642px)
-    @include position(absolute, 0 0 18% 10%)
+    @include position(absolute, 50% 0 0 10%)
     margin-top: -320px
 
     .wrapper
@@ -331,6 +424,7 @@ textarea
     @include position(absolute, 0 0 100% 0)
     margin-bottom: 50px
     @include animation-delay(1.5s)
+    opacity: 0
 
     p
       max-width: 800px
@@ -358,10 +452,10 @@ textarea
         position: absolute
         left: 50%
         margin-left: -250px
-        box-shadow: 0 15px 0 -5px rgba(0,0,0,.08)
+        box-shadow: 0 12px 0 -5px rgba(0,0,0,.08)
 
         .browser-bar
-          width: 100%
+          width: 101%
           height: 22px
           background-color: #CCC
           border-bottom: 4px solid #647f32
@@ -377,6 +471,9 @@ textarea
             background-color: #647f32
             margin-right: 4px
             vertical-align: top
+
+        &.theme-main
+          box-shadow: 0 12px 0 -5px rgba(0,0,0,.08), -30px 0 0 -20px rgba(0,0,0,.1), 30px 0 0 -20px rgba(0,0,0,.1)
 
         &.theme-1
           height: auto
@@ -403,6 +500,7 @@ textarea
     width: 100%
     margin-top: 45px
     @include animation-delay(1.5s)
+    opacity: 0
 
     img
       margin: 0 15px
@@ -424,7 +522,8 @@ textarea
     .text
       text-align: left
       margin-bottom: 40px
-      @include animation-delay(.8s)
+      @include animation-delay(.4s)
+      opacity: 0
 
       p
         max-width: 800px
@@ -602,6 +701,7 @@ textarea
     width: 100%
     margin-bottom: 50px
     @include animation-delay(.8s)
+    opacity: 0
 
     p
       max-width: 800px
@@ -612,6 +712,8 @@ textarea
     margin: 0 auto 40px
     padding-right: 140px
     position: relative
+    @include animation-delay(.8s)
+    opacity: 0
 
     input
       @include placeholder
@@ -619,8 +721,8 @@ textarea
         color: rgba(255,255,255,.7)
 
       &[type="email"]
-        border: none
-        background-color: rgba(0,0,0,.5)
+        border: 3px solid #563373
+        background-color: #563373
         width: 100%
         border-radius: 10px 0 0 10px
         padding: 15px 20px
@@ -629,10 +731,18 @@ textarea
         font-family: "museo-sans", sans-serif
         font-weight: 500
         font-size: 18px
+        @include transition(all .4s)
+
+        &:focus
+          border: 3px solid #563373
+          background-color: #FFF
+
+          &+ input[type="submit"]:hover
+            background-color: #563373
+            color: #FFF
 
       &[type="submit"]
-        border: 0
-        box-shadow: inset 0 0 0 3px rgba(0,0,0,.5)
+        border: 3px solid #563373
         background-color: transparent
         width: 140px
         border-radius: 0 10px 10px 0
@@ -642,13 +752,42 @@ textarea
         font-family: "museo-sans", sans-serif
         font-weight: 900
         font-size: 18px
-        @include position(absolute, 0px 0px 0 0)
+        @include position(absolute, 0px 3px 0 0)
         @include transition(all .4s)
 
-        &:hover
-          box-shadow: inset 0 0 0 0 rgba(0,0,0,.35)
-          background-color: #FFF
-          color: #000
+  .share-btns
+    @include animation-delay(.8s)
+    opacity: 0
+    @extend .bottom-buttons
+    position: relative
+    padding: 0
+    bottom: 0
+
+    a
+      width: 70px
+      height: 70px
+      margin: 0 5px
+      display: inline-block
+      float: none
+      border-radius: 50%
+      box-shadow: inset 0 0 0 3px rgba(0,0,0,.45), 0 0 0 0 rgba(0,0,0,.45)
+
+      span
+        background-size: 70px 70px !important
+        opacity: .5
+
+      &.google span
+        background: url("../images/google-lg.png") center center repeat-y
+      &.twitter span
+        background: url("../images/twitter-lg.png") center center repeat-y
+      &.facebook span
+        background: url("../images/facebook-lg.png") center center repeat-y
+
+      &:hover
+        box-shadow: inset 0 0 0 0 rgba(0,0,0,.45), 0 0 0 4px rgba(0,0,0,.45)
+
+        span
+          background-position: center -70px
 
 
 /*-----------------------------------------------------------------------------------*/

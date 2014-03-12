@@ -27,21 +27,41 @@ html
       img.text src="images/kickdrop-text.png" width="112"
 
     .bottom-buttons
-      a.share href="#" target="_blank"
-        span Share
-      a.twitter href="#" target="_blank"
-        span Twitter
-      a.facebook href="#" target="_blank"
-        span Facebook
-      a.signup-btn.toSlide href="#signup"
-        | Sign up
+      .wrapper
+        a.share href="#" target="_blank"
+          span Share
+        a.twitter href="#" target="_blank"
+          span Twitter
+        a.facebook href="#" target="_blank"
+          span Facebook
+        a.signup-btn.toSlide href="#signup"
+          | Sign up
+
+        .share-btns
+          a.twitter href="http://twitter.com/share?text=Kick-ass%20free%20themes.%20Fresh%20drops."
+            span Tweet this
+          a.facebook href="javascript:fbShare('http://kickdrop.me', 'Kickdrop', 'Kick-ass free themes. Fresh drops', 'http://goo.gl/dS52U', 520, 350)"
+            span Share on Facebook
+          a.google href="https://plus.google.com/share?url=http://kickdrop.me" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600,left=300');return false;"
+            span Share on Google+
 
     .section.intro
       .text.animated.bounceInDown
-        h1 Kick-ass themes. Fresh.
+        h1 Kick-ass themes. Fresh drops.
         p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.
 
       .astronaut
+
+      .planet
+      .rocket
+        .wrapper
+          .exhaust
+      .spaceship
+        .wrapper
+          .beams
+      .satellite
+        .wrapper
+          .signal
 
     .section.problem
       .laptop
@@ -116,7 +136,7 @@ html
       .orange-bg
       .text.completed
         h1 You are big winner!!!
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.
+        p Your site is looking fresh and is good to go! Just one more thing left to do…
 
       .left-col
         .text
@@ -153,20 +173,20 @@ html
         h1 Be the first to hear the news
         p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.
       form.subscribe-form.validate action="http://kickdrop.us3.list-manage.com/subscribe/post?u=425ab2b3e010a637cca296582&amp;id=25af7aa38c" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
-        input#mc-embedded-subscribe name="subscribe" type="submit" value="Sign up"
         input#mce-EMAIL.email name="EMAIL" placeholder="Your email address" required="" type="email" value=""
+        input#mc-embedded-subscribe name="subscribe" type="submit" value="Sign up"
           /! real people should not fill this in and expect good things - do not remove this or risk form bot signups
         div style="position: absolute; left: -5000px;"
           input name="b_425ab2b3e010a637cca296582_25af7aa38c" type="text" value=""
 
-      h2 Spread the word
-      .share-buttons
-        a.facebook-share href="javascript:fbShare('http://kickdrop.me', 'Kickdrop', 'Kick-ass free themes. Fresh drops', 'http://goo.gl/dS52U', 520, 350)"
-          | Share
-        a.twitter-share href="http://twitter.com/share?text=Kick-ass%20free%20themes.%20Fresh%20drops."
-          | Tweet
-        a.google-share href="https://plus.google.com/share?url=http://kickdrop.me" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600,left=300');return false;"
-          | Plus
+      .share-btns
+        h2 Spread the word
+        a.twitter href="http://twitter.com/share?text=Kick-ass%20free%20themes.%20Fresh%20drops."
+          span Tweet this
+        a.facebook href="javascript:fbShare('http://kickdrop.me', 'Kickdrop', 'Kick-ass free themes. Fresh drops', 'http://goo.gl/dS52U', 520, 350)"
+          span Share on Facebook
+        a.google href="https://plus.google.com/share?url=http://kickdrop.me" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600,left=300');return false;"
+          span Share on Google+
 
         / a.google-share href="https://plus.google.com/share?url=http://kickdrop.me" onclick="javascript:googleShare(600,600);return false;"
         /   | Plus

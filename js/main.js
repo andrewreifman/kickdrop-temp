@@ -11,7 +11,7 @@ $(document).ready(function() {
     anchors: ['intro', 'problem', 'themes', 'drops', 'signup'],
     menu: '#menu',
     navigationTooltips: ['Intro', 'Problem', 'Themes', 'Drops', 'Signup'],
-    scrollingSpeed: 100,
+    scrollingSpeed: 300,
     fixedElements: '.logo, .bottom-buttons',
     onLeave: function(index, direction){
       if(index == '1' && direction =='down'){
@@ -43,7 +43,9 @@ $(document).ready(function() {
       }
       if(anchorLink == 'signup'){
         $('.bottom-buttons').delay(600).animate({'bottom': '-100px'}, 300, 'easeInBack');
-        $('.signup .text').addClass('animated bounceInUp');
+        $('.signup .text').addClass('animated bounceInDown');
+        $('.signup .share-btns').addClass('animated bounceInUp');
+        $('.signup .subscribe-form').addClass('animated bounceInLeft');
       }
     }
   });
@@ -59,6 +61,12 @@ $(document).ready(function() {
     if($(".intro").is('.intro-hidden')){
       $('.logo .text').stop().animate({'margin-top': '-200px'}, 300, 'easeInBack');
     }
+  });
+
+  $('.bottom-buttons .share').click(function(){
+    $(this).toggleClass('active');
+    $('.bottom-buttons .share-btns').toggleClass('active');
+    return false;
   });
 
 
@@ -101,7 +109,7 @@ $(document).ready(function() {
     });
   });
 
-  $('.twitter-share').click(function(event) {
+  $('.twitter').click(function(event) {
     var width  = 575,
         height = 400,
         left   = (screen.width  - width)  / 2,
@@ -114,7 +122,6 @@ $(document).ready(function() {
                  ',left='   + left;
 
     window.open(url, 'twitter', opts);
-
     return false;
   });
 });

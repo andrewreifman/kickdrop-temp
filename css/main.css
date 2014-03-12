@@ -27,13 +27,19 @@ h1 {
   color: white;
   font-size: 42px;
   font-weight: 900;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   margin: 0 0 15px;
-  line-height: 1.1; }
+  line-height: 1.1;
+  -webkit-font-smoothing: antialiased; }
+
+h2 {
+  font-size: 1.4em;
+  margin: 0.7em 0;
+  color: rgba(0, 0, 0, 0.55); }
 
 p {
   color: black;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.65);
   font-size: 18px;
   font-weight: 700;
   margin: 0;
@@ -72,14 +78,16 @@ textarea {
   .logo .shoe {
     margin-right: 10px; }
 
-.bottom-buttons {
+.bottom-buttons, .signup .share-btns {
   position: fixed;
-  z-index: 100;
   bottom: 15px;
-  left: 0;
+  left: 0px;
+  z-index: 100;
   padding: 0 15px;
   width: 100%; }
-  .bottom-buttons a {
+  .bottom-buttons .wrapper, .signup .share-btns .wrapper {
+    position: relative; }
+  .bottom-buttons a, .signup .share-btns a {
     width: 50px;
     height: 50px;
     display: block;
@@ -91,7 +99,7 @@ textarea {
     -webkit-transition: background-color 0.15s, box-shadow 0.1s;
     -moz-transition: background-color 0.15s, box-shadow 0.1s;
     transition: background-color 0.15s, box-shadow 0.1s; }
-    .bottom-buttons a span {
+    .bottom-buttons a span, .signup .share-btns a span {
       width: 100%;
       height: 100%;
       display: block;
@@ -101,13 +109,22 @@ textarea {
       -webkit-transition: all 0.2s;
       -moz-transition: all 0.2s;
       transition: all 0.2s; }
-    .bottom-buttons a.share span {
+    .bottom-buttons a.share span, .signup .share-btns a.share span {
       background: url("../images/share.png") center center repeat-y; }
-    .bottom-buttons a.twitter span {
+    .bottom-buttons a.share.active, .signup .share-btns a.share.active {
+      box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.35), 0 0 0 3px rgba(0, 0, 0, 0.35);
+      background-color: white;
+      color: black; }
+      .bottom-buttons a.share.active span, .signup .share-btns a.share.active span {
+        opacity: 1;
+        background-position: center -50px; }
+    .bottom-buttons a.twitter span, .signup .share-btns a.twitter span {
       background: url("../images/twitter.png") center center repeat-y; }
-    .bottom-buttons a.facebook span {
+    .bottom-buttons a.facebook span, .signup .share-btns a.facebook span {
       background: url("../images/facebook.png") center center repeat-y; }
-    .bottom-buttons a.signup-btn {
+    .bottom-buttons a.google span, .signup .share-btns a.google span {
+      background: url("../images/google.png") center center repeat-y; }
+    .bottom-buttons a.signup-btn, .signup .share-btns a.signup-btn {
       width: auto;
       float: right;
       margin: 0;
@@ -118,17 +135,62 @@ textarea {
       font-size: 15px;
       line-height: 50px;
       text-align: center; }
-    .bottom-buttons a:hover {
+    .bottom-buttons a:hover, .signup .share-btns a:hover {
       box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.35), 0 0 0 3px rgba(0, 0, 0, 0.35);
       background-color: white;
       color: black; }
-      .bottom-buttons a:hover span {
+      .bottom-buttons a:hover span, .signup .share-btns a:hover span {
         opacity: 1;
         background-position: center -50px; }
+  .bottom-buttons .share-btns, .signup .share-btns .share-btns {
+    position: absolute;
+    bottom: 6px;
+    left: 0px; }
+    .bottom-buttons .share-btns a, .signup .share-btns .share-btns a {
+      float: none;
+      margin: 6px 0 0 -100px;
+      -webkit-transition: margin-left 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -moz-transition: margin-left 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: margin-left 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+      .bottom-buttons .share-btns a.twitter, .signup .share-btns .share-btns a.twitter {
+        -webkit-transition-delay: 0ms;
+        -moz-transition-delay: 0ms;
+        -ms-transition-delay: 0ms;
+        transition-delay: 0ms; }
+      .bottom-buttons .share-btns a.facebook, .signup .share-btns .share-btns a.facebook {
+        -webkit-transition-delay: 50ms;
+        -moz-transition-delay: 50ms;
+        -ms-transition-delay: 50ms;
+        transition-delay: 50ms; }
+      .bottom-buttons .share-btns a.google, .signup .share-btns .share-btns a.google {
+        -webkit-transition-delay: 100ms;
+        -moz-transition-delay: 100ms;
+        -ms-transition-delay: 100ms;
+        transition-delay: 100ms; }
+    .bottom-buttons .share-btns.active a, .signup .share-btns .share-btns.active a {
+      margin-left: 0; }
+      .bottom-buttons .share-btns.active a.twitter, .signup .share-btns .share-btns.active a.twitter {
+        -webkit-transition-delay: 100ms;
+        -moz-transition-delay: 100ms;
+        -ms-transition-delay: 100ms;
+        transition-delay: 100ms; }
+      .bottom-buttons .share-btns.active a.facebook, .signup .share-btns .share-btns.active a.facebook {
+        -webkit-transition-delay: 50ms;
+        -moz-transition-delay: 50ms;
+        -ms-transition-delay: 50ms;
+        transition-delay: 50ms; }
+      .bottom-buttons .share-btns.active a.google, .signup .share-btns .share-btns.active a.google {
+        -webkit-transition-delay: 0ms;
+        -moz-transition-delay: 0ms;
+        -ms-transition-delay: 0ms;
+        transition-delay: 0ms; }
 
 .section {
   padding: 0 40px;
   overflow: hidden; }
+
+.animated {
+  opacity: 1 !important; }
 
 /*----------------------------------------------------------------------------------- */
 /*  Pagination color override */
@@ -183,7 +245,8 @@ textarea {
   background: #32b9b1 url("../images/stars.png") repeat center center; }
   .intro .text {
     max-width: 850px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    opacity: 0; }
     .intro .text h1 {
       font-size: 60px;
       margin-bottom: 25px; }
@@ -199,6 +262,57 @@ textarea {
     -webkit-animation: spaceSpin 15s infinite linear;
     -moz-animation: spaceSpin 15s infinite linear;
     animation: spaceSpin 15s infinite linear; }
+  .intro .rocket {
+    background: url("../images/rocket.png") no-repeat 0 0;
+    background-size: 94px 154px;
+    width: 94px;
+    height: 154px;
+    display: block;
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg); }
+    .intro .rocket .wrapper {
+      position: relative; }
+      .intro .rocket .wrapper .exhaust {
+        position: absolute; }
+  .intro .spaceship {
+    background: url("../images/spaceship.png") no-repeat 0 0;
+    background-size: 94px 80px;
+    width: 94px;
+    height: 80px;
+    display: block;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg); }
+    .intro .spaceship .wrapper {
+      position: relative; }
+      .intro .spaceship .wrapper .beams {
+        position: absolute; }
+  .intro .satellite {
+    background: url("../images/satellite.png") no-repeat 0 0;
+    background-size: 198px 88px;
+    width: 198px;
+    height: 88px;
+    display: block;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg); }
+    .intro .satellite .wrapper {
+      position: relative; }
+      .intro .satellite .wrapper .signal {
+        position: absolute; }
+  .intro .planet {
+    background: url("../images/planet.png") no-repeat 0 0;
+    background-size: 108px 70px;
+    width: 108px;
+    height: 70px;
+    display: block; }
 
 /*----------------------------------------------------------------------------------- */
 /*  Problem */
@@ -279,7 +393,8 @@ textarea {
     -webkit-animation-delay: 0.8s;
     -moz-animation-delay: 0.8s;
     -ms-animation-delay: 0.8s;
-    animation-delay: 0.8s; }
+    animation-delay: 0.8s;
+    opacity: 0; }
   .problem .laptop {
     background: url("../images/laptop.png") no-repeat 0 0;
     background-size: 554px 642px;
@@ -287,7 +402,7 @@ textarea {
     height: 642px;
     display: block;
     position: absolute;
-    bottom: 18%;
+    top: 50%;
     left: 10%;
     margin-top: -320px; }
     @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
@@ -413,7 +528,8 @@ textarea {
     -webkit-animation-delay: 1.5s;
     -moz-animation-delay: 1.5s;
     -ms-animation-delay: 1.5s;
-    animation-delay: 1.5s; }
+    animation-delay: 1.5s;
+    opacity: 0; }
     .themes .text p {
       max-width: 800px;
       margin: 0 auto; }
@@ -438,9 +554,9 @@ textarea {
         position: absolute;
         left: 50%;
         margin-left: -250px;
-        box-shadow: 0 15px 0 -5px rgba(0, 0, 0, 0.08); }
+        box-shadow: 0 12px 0 -5px rgba(0, 0, 0, 0.08); }
         .themes .theme-options .wrapper .browser .browser-bar {
-          width: 100%;
+          width: 101%;
           height: 22px;
           background-color: #cccccc;
           border-bottom: 4px solid #647f32;
@@ -455,6 +571,8 @@ textarea {
             background-color: #647f32;
             margin-right: 4px;
             vertical-align: top; }
+        .themes .theme-options .wrapper .browser.theme-main {
+          box-shadow: 0 12px 0 -5px rgba(0, 0, 0, 0.08), -30px 0 0 -20px rgba(0, 0, 0, 0.1), 30px 0 0 -20px rgba(0, 0, 0, 0.1); }
         .themes .theme-options .wrapper .browser.theme-1 {
           height: auto;
           top: 40px;
@@ -479,7 +597,8 @@ textarea {
     -webkit-animation-delay: 1.5s;
     -moz-animation-delay: 1.5s;
     -ms-animation-delay: 1.5s;
-    animation-delay: 1.5s; }
+    animation-delay: 1.5s;
+    opacity: 0; }
     .themes .logos img {
       margin: 0 15px; }
 
@@ -501,10 +620,11 @@ textarea {
     .drops .left-col .text {
       text-align: left;
       margin-bottom: 40px;
-      -webkit-animation-delay: 0.8s;
-      -moz-animation-delay: 0.8s;
-      -ms-animation-delay: 0.8s;
-      animation-delay: 0.8s; }
+      -webkit-animation-delay: 0.4s;
+      -moz-animation-delay: 0.4s;
+      -ms-animation-delay: 0.4s;
+      animation-delay: 0.4s;
+      opacity: 0; }
       .drops .left-col .text p {
         max-width: 800px;
         margin: 0 auto; }
@@ -673,7 +793,8 @@ textarea {
     -webkit-animation-delay: 0.8s;
     -moz-animation-delay: 0.8s;
     -ms-animation-delay: 0.8s;
-    animation-delay: 0.8s; }
+    animation-delay: 0.8s;
+    opacity: 0; }
     .signup .text p {
       max-width: 800px;
       margin: 0 auto; }
@@ -681,7 +802,12 @@ textarea {
     max-width: 900px;
     margin: 0 auto 40px;
     padding-right: 140px;
-    position: relative; }
+    position: relative;
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    -ms-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    opacity: 0; }
     .signup .subscribe-form input::-webkit-input-placeholder {
       color: white;
       color: rgba(255, 255, 255, 0.7); }
@@ -695,8 +821,8 @@ textarea {
       color: white;
       color: rgba(255, 255, 255, 0.7); }
     .signup .subscribe-form input[type="email"] {
-      border: none;
-      background-color: rgba(0, 0, 0, 0.5);
+      border: 3px solid #563373;
+      background-color: #563373;
       width: 100%;
       border-radius: 10px 0 0 10px;
       padding: 15px 20px;
@@ -704,10 +830,18 @@ textarea {
       height: 60px;
       font-family: "museo-sans", sans-serif;
       font-weight: 500;
-      font-size: 18px; }
+      font-size: 18px;
+      -webkit-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      transition: all 0.4s; }
+      .signup .subscribe-form input[type="email"]:focus {
+        border: 3px solid #563373;
+        background-color: white; }
+        .signup .subscribe-form input[type="email"]:focus + input[type="submit"]:hover {
+          background-color: #563373;
+          color: white; }
     .signup .subscribe-form input[type="submit"] {
-      border: 0;
-      box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.5);
+      border: 3px solid #563373;
       background-color: transparent;
       width: 140px;
       border-radius: 0 10px 10px 0;
@@ -719,14 +853,40 @@ textarea {
       font-size: 18px;
       position: absolute;
       top: 0px;
-      right: 0px;
+      right: 3px;
       -webkit-transition: all 0.4s;
       -moz-transition: all 0.4s;
       transition: all 0.4s; }
-      .signup .subscribe-form input[type="submit"]:hover {
-        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.35);
-        background-color: white;
-        color: black; }
+  .signup .share-btns {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    -ms-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    opacity: 0;
+    position: relative;
+    padding: 0;
+    bottom: 0; }
+    .signup .share-btns a {
+      width: 70px;
+      height: 70px;
+      margin: 0 5px;
+      display: inline-block;
+      float: none;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(0, 0, 0, 0.45); }
+      .signup .share-btns a span {
+        background-size: 70px 70px !important;
+        opacity: 0.5; }
+      .signup .share-btns a.google span {
+        background: url("../images/google-lg.png") center center repeat-y; }
+      .signup .share-btns a.twitter span {
+        background: url("../images/twitter-lg.png") center center repeat-y; }
+      .signup .share-btns a.facebook span {
+        background: url("../images/facebook-lg.png") center center repeat-y; }
+      .signup .share-btns a:hover {
+        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(0, 0, 0, 0.45); }
+        .signup .share-btns a:hover span {
+          background-position: center -70px; }
 
 /*----------------------------------------------------------------------------------- */
 /*  Helper classes */
