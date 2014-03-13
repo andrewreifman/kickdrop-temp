@@ -59,3 +59,48 @@ H!=a)&&G(b,a)}});b(document).keydown(function(a){if(c.keyboardScrolling&&!n)swit
 b(this).data("tooltip");b('<div class="fullPage-tooltip '+c.navigationPosition+'">'+a+"</div>").hide().appendTo(b(this)).fadeIn(200)},mouseleave:function(){b(this).find(".fullPage-tooltip").fadeOut().remove()}},"#fullPage-nav li");c.normalScrollElements&&(b(document).on("mouseover",c.normalScrollElements,function(){b.fn.fullpage.setMouseWheelScrolling(!1)}),b(document).on("mouseout",c.normalScrollElements,function(){b.fn.fullpage.setMouseWheelScrolling(!0)}));b(".section").on("click",".controlArrow",
 function(){if(!r){r=!0;var a=b(this).closest(".section").find(".slides"),c=a.find(".slide.active"),d=null,d=b(this).hasClass("prev")?c.prev(".slide"):c.next(".slide");d.length||(d=b(this).hasClass("prev")?c.siblings(":last"):c.siblings(":first"));y(a,d)}});b(".section").on("click",".toSlide",function(a){a.preventDefault();a=b(this).closest(".section").find(".slides");a.find(".slide.active");var c=null,c=a.find(".slide").eq(b(this).data("index")-1);0<c.length&&y(a,c)});if(!I){var V;b(window).resize(function(){clearTimeout(V);
 V=setTimeout(Q,500)})}b(window).bind("orientationchange",function(){Q()});b(document).on("click",".fullPage-slidesNav a",function(a){a.preventDefault();a=b(this).closest(".section").find(".slides");var c=a.find(".slide").eq(b(this).closest("li").index());y(a,c)})}})(jQuery);
+
+
+/*global jQuery */
+/*!
+* FitText.js 1.2
+*
+* Copyright 2011, Dave Rupert http://daverupert.com
+* Released under the WTFPL license
+* http://sam.zoy.org/wtfpl/
+*
+* Date: Thu May 05 14:23:00 2011 -0600
+*/
+
+(function( $ ){
+
+  $.fn.fitText = function( kompressor, options ) {
+
+    // Setup options
+    var compressor = kompressor || 1,
+        settings = $.extend({
+          'minFontSize' : Number.NEGATIVE_INFINITY,
+          'maxFontSize' : Number.POSITIVE_INFINITY
+        }, options);
+
+    return this.each(function(){
+
+      // Store the object
+      var $this = $(this);
+
+      // Resizer() resizes items based on the object width divided by the compressor * 10
+      var resizer = function () {
+        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+      };
+
+      // Call once to set.
+      resizer();
+
+      // Call on resize. Opera debounces their resize by default.
+      $(window).on('resize.fittext orientationchange.fittext', resizer);
+
+    });
+
+  };
+
+})( jQuery );

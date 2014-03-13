@@ -25,7 +25,7 @@ body {
 
 h1 {
   color: white;
-  font-size: 42px;
+  font-size: 3em;
   font-weight: 900;
   letter-spacing: -0.03em;
   margin: 0 0 15px;
@@ -76,7 +76,7 @@ textarea {
   top: 15px;
   z-index: 100; }
   .logo .shoe {
-    margin-right: 10px; }
+    margin-right: 8px; }
 
 .bottom-buttons, .signup .share-btns {
   position: fixed;
@@ -144,7 +144,7 @@ textarea {
         background-position: center -50px; }
   .bottom-buttons .share-btns, .signup .share-btns .share-btns {
     position: absolute;
-    bottom: 6px;
+    bottom: 8px;
     left: 0px; }
     .bottom-buttons .share-btns a, .signup .share-btns .share-btns a {
       float: none;
@@ -287,11 +287,21 @@ textarea {
     -moz-transform: rotate(-10deg);
     -ms-transform: rotate(-10deg);
     -o-transform: rotate(-10deg);
-    transform: rotate(-10deg); }
+    transform: rotate(-10deg);
+    position: absolute;
+    top: 40%;
+    left: 110%; }
     .intro .spaceship .wrapper {
       position: relative; }
       .intro .spaceship .wrapper .beams {
-        position: absolute; }
+        background: url("../images/beams.gif") no-repeat 0 0;
+        background-size: 72px 78px;
+        width: 72px;
+        height: 78px;
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 12px; }
   .intro .satellite {
     background: url("../images/satellite.png") no-repeat 0 0;
     background-size: 198px 88px;
@@ -556,7 +566,7 @@ textarea {
         margin-left: -250px;
         box-shadow: 0 12px 0 -5px rgba(0, 0, 0, 0.08); }
         .themes .theme-options .wrapper .browser .browser-bar {
-          width: 101%;
+          width: 100%;
           height: 22px;
           background-color: #cccccc;
           border-bottom: 4px solid #647f32;
@@ -572,7 +582,18 @@ textarea {
             margin-right: 4px;
             vertical-align: top; }
         .themes .theme-options .wrapper .browser.theme-main {
-          box-shadow: 0 12px 0 -5px rgba(0, 0, 0, 0.08), -30px 0 0 -20px rgba(0, 0, 0, 0.1), 30px 0 0 -20px rgba(0, 0, 0, 0.1); }
+          box-shadow: 0 12px 0 -5px rgba(0, 0, 0, 0.08), -30px 0 0 -20px rgba(0, 0, 0, 0.1), 30px 0 0 -20px rgba(0, 0, 0, 0.1);
+          background: url("../images/theme-main.png") no-repeat 0 0;
+          background-size: 488px 388px;
+          width: 488px;
+          height: 388px;
+          display: block;
+          height: 100%;
+          width: 500px; }
+          @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+            .themes .theme-options .wrapper .browser.theme-main {
+              background: url("../images/theme-main@2x.png") no-repeat 0 0;
+              background-size: 488px 388px; } }
         .themes .theme-options .wrapper .browser.theme-1 {
           height: auto;
           top: 40px;

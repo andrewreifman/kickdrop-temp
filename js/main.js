@@ -51,6 +51,11 @@ $(document).ready(function() {
   });
 
 
+  // Fittext headers
+  // jQuery("h1").fitText();
+
+
+  // Logo animation
   $('.logo').mouseenter(function(){
     if($(".intro").is('.intro-hidden')){
       $('.logo .text').animate({'margin-top': '0px'}, 200, 'easeOutBack');
@@ -63,6 +68,8 @@ $(document).ready(function() {
     }
   });
 
+
+  // Share button js
   $('.bottom-buttons .share').click(function(){
     $(this).toggleClass('active');
     $('.bottom-buttons .share-btns').toggleClass('active');
@@ -71,7 +78,6 @@ $(document).ready(function() {
 
 
   // Drag and drop widgets
-
   $(".widgets .widget").each(function(){
     $(this).mousedown(function(){
       var boxClass = $(this).attr('title');
@@ -109,6 +115,24 @@ $(document).ready(function() {
     });
   });
 
+
+  var $spaceship = $('.spaceship');
+  function spaceshipAnim() {
+      $spaceship.animate({
+          left: "-110%"
+      }, 8000, function() {
+          $spaceship.removeAttr("style");
+
+          setTimeout(function() {
+              spaceshipAnim();
+          }, 2000);
+      });
+  }
+
+  spaceshipAnim();
+
+
+  // Share buttons popup js
   $('.twitter').click(function(event) {
     var width  = 575,
         height = 400,

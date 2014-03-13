@@ -25,7 +25,7 @@ body
 
 h1
   color: #FFF
-  font-size: 42px
+  font-size: 3em
   font-weight: 900
   letter-spacing: -0.03em
   margin: 0 0 15px
@@ -103,7 +103,7 @@ textarea
   z-index: 100
 
   .shoe
-    margin-right: 10px
+    margin-right: 8px
 
 .bottom-buttons
   @include position(fixed, 0 0 15px 0px)
@@ -175,7 +175,7 @@ textarea
         background-position: center -50px
 
   .share-btns
-    @include position(absolute, 0 0 6px 0px)
+    @include position(absolute, 0 0 8px 0px)
 
     a
       float: none
@@ -281,14 +281,15 @@ textarea
 
   .spaceship
     @include bgImage("../images/spaceship.png", 94px, 80px)
-    // position: absolute
     @include transform(rotate(-10deg))
+    @include position(absolute, 40% 0 0 110%)
 
     .wrapper
       position: relative
 
       .beams
-        @include position(absolute, 0 0 0 0)
+        @include bgImage("../images/beams.gif", 72px, 78px)
+        @include position(absolute, 80px 0 0 12px)
 
   .satellite
     @include bgImage("../images/satellite.png", 198px, 88px)
@@ -455,7 +456,7 @@ textarea
         box-shadow: 0 12px 0 -5px rgba(0,0,0,.08)
 
         .browser-bar
-          width: 101%
+          width: 100%
           height: 22px
           background-color: #CCC
           border-bottom: 4px solid #647f32
@@ -474,6 +475,10 @@ textarea
 
         &.theme-main
           box-shadow: 0 12px 0 -5px rgba(0,0,0,.08), -30px 0 0 -20px rgba(0,0,0,.1), 30px 0 0 -20px rgba(0,0,0,.1)
+          @include bgImage("../images/theme-main.png", 488px, 388px)
+          @include image2x("../images/theme-main@2x.png", 488px, 388px)
+          height: 100%
+          width: 500px
 
         &.theme-1
           height: auto
