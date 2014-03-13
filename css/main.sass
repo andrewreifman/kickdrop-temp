@@ -25,7 +25,7 @@ body
 
 h1
   color: #FFF
-  font-size: 3em
+  font-size: 2.8em
   font-weight: 900
   letter-spacing: -0.03em
   margin: 0 0 15px
@@ -179,7 +179,7 @@ textarea
 
     a
       float: none
-      margin: 6px 0 0 -100px
+      margin: 6px 0 0 -65px
       @include transition(margin-left .25s cubic-bezier(0.175, 0.885, 0.320, 1.275))
 
       &.twitter
@@ -247,9 +247,16 @@ textarea
   to
     @include transform(rotate(360deg))
 
+@include keyframes(starPan)
+  from
+    background-position: 0px center
+  to
+    background-position: -743px center
+
 .intro
   text-align: center
   background: #32b9b1 url("../images/stars.png") repeat center center
+  @include animation(starPan 20s infinite linear)
 
   .text
     max-width: 850px
@@ -267,11 +274,13 @@ textarea
     @include bgImage("../images/astronaut.png", 179px, 282px)
     margin: 80px auto 0
     @include animation(spaceSpin 15s infinite linear)
+    position: relative
+    z-index: 100
 
   .rocket
     @include bgImage("../images/rocket.png", 94px, 154px)
-    // position: absolute
-    @include transform(rotate(-30deg))
+    @include transform(rotate(-25deg))
+    @include position(absolute, 110% 0 0 60%)
 
     .wrapper
       position: relative
@@ -282,7 +291,7 @@ textarea
   .spaceship
     @include bgImage("../images/spaceship.png", 94px, 80px)
     @include transform(rotate(-10deg))
-    @include position(absolute, 40% 0 0 110%)
+    @include position(absolute, 28% 0 0 110%)
 
     .wrapper
       position: relative
@@ -293,8 +302,8 @@ textarea
 
   .satellite
     @include bgImage("../images/satellite.png", 198px, 88px)
-    // position: absolute
     @include transform(rotate(15deg))
+    @include position(absolute, 60% 0 0 -20%)
 
     .wrapper
       position: relative
@@ -304,7 +313,7 @@ textarea
 
   .planet
     @include bgImage("../images/planet.png", 108px, 70px)
-    // position: absolute
+    @include position(absolute, 50% 0 0 110%)
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -334,27 +343,27 @@ textarea
 .problem
   padding-right: 125px
 
-  .text
-    @include position(absolute, 0 0 0 100%)
-    margin: 0 0 0 60px
-    width: 410px
-    @include animation-delay(.8s)
-    opacity: 0
-
   .laptop
     @include bgImage("../images/laptop.png", 554px, 642px)
     @include image2x("../images/laptop@2x.png", 555px, 642px)
-    @include position(absolute, 50% 0 0 10%)
-    margin-top: -320px
+    @include position(absolute, 50% 0 0 50%)
+    margin: -340px 0 0 -505px
 
     .wrapper
       position: relative
       width: 100%
       height: 100%
 
+    .text
+      @include position(absolute, 15px 0 0 96%)
+      margin: 0 0 0 60px
+      width: 420px
+      @include animation-delay(.8s)
+      opacity: 0
+
     .pencil
       @include bgImage("../images/pencil.png", 24px, 222px)
-      @include position(absolute, 0 0 25px 25px)
+      @include position(absolute, 0 0 25px 35px)
 
     .screen
       @include bgImage("../images/screen.gif", 392px, 226px)
@@ -741,6 +750,7 @@ textarea
         &:focus
           border: 3px solid #563373
           background-color: #FFF
+          color: #000
 
           &+ input[type="submit"]:hover
             background-color: #563373
@@ -845,7 +855,61 @@ textarea
   *zoom: 1
 
 
-@media only screen and (min-width: 35em)
+@media only screen and (max-width: 1024px)
+  h1
+    font-size: 2.6em
+  p
+    font-size: 16px
+  #fullPage-nav.right
+    right: 15px
+  .bottom-buttons
+    bottom: 10px
+    padding: 0 10px
+  .intro
+    .text
+      h1
+        margin-bottom: 20px
+      p
+        font-size: 20px
+    .astronaut
+      margin: 30px auto -30px
+  .problem
+    .laptop
+      margin-top: -315px
+      margin-left: -490px
+      background-size: 90%
+      .text
+        width: 380px
+        top: 10px
+        left: 90%
+        margin-left: 40px
+      .pencil
+        display: none
+      .coffee
+        right: -480px
+      .hand
+        left: 90%
+        background-size: 90%
+        top: 258px
+        margin-left: -1px
+      .screen
+        background-size: 90%
+        top: 53px
+        left: 115px
+
+  .themes
+    .theme-options
+      margin-top: -165px
+
+      .text
+        margin-bottom: 45px
+
+        p
+          max-width: 700px
+
+      .logos
+        margin-top: 25px
+        display: none
 
 @media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)
 

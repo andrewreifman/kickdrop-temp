@@ -46,6 +46,9 @@ $(document).ready(function() {
         $('.signup .text').addClass('animated bounceInDown');
         $('.signup .share-btns').addClass('animated bounceInUp');
         $('.signup .subscribe-form').addClass('animated bounceInLeft');
+        setTimeout(function(){
+          $('.bottom-buttons .share-btns, .bottom-buttons .share').removeClass('active');
+        }, 600);
       }
     }
   });
@@ -116,20 +119,51 @@ $(document).ready(function() {
   });
 
 
+  // Outer space elements animated
   var $spaceship = $('.spaceship');
-  function spaceshipAnim() {
-      $spaceship.animate({
-          left: "-110%"
-      }, 8000, 'linear', function() {
-          $spaceship.removeAttr("style");
+  var $rocket = $('.rocket');
+  var $planet = $('.planet');
+  var $satellite = $('.satellite');
+  function spaceAnim(){
+    $rocket.delay(400).animate({
+      top: "-20%",
+      left: "20%"
+    }, 5000, 'linear', function(){
+      $rocket.removeAttr("style");
+      setTimeout(function(){
+        spaceAnim();
+      }, 35000);
+    });
 
-          setTimeout(function() {
-              spaceshipAnim();
-          }, 2000);
-      });
+    $spaceship.delay(8200).animate({
+      left: "-10%"
+    }, 7000, 'linear', function(){
+      $spaceship.removeAttr("style");
+      setTimeout(function(){
+        spaceAnim();
+      }, 35000);
+    });
+
+    $satellite.delay(17000).animate({
+      left: "105%"
+    }, 10000, 'linear', function(){
+      $satellite.removeAttr("style");
+      setTimeout(function(){
+        spaceAnim();
+      }, 35000);
+    });
+
+    $planet.delay(26000).animate({
+      left: "-10%"
+    }, 14000, 'linear', function(){
+      $planet.removeAttr("style");
+      setTimeout(function(){
+        spaceAnim();
+      }, 35000);
+    });
   }
 
-  spaceshipAnim();
+  spaceAnim();
 
 
   // Share buttons popup js

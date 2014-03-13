@@ -25,7 +25,7 @@ body {
 
 h1 {
   color: white;
-  font-size: 3em;
+  font-size: 2.8em;
   font-weight: 900;
   letter-spacing: -0.03em;
   margin: 0 0 15px;
@@ -148,7 +148,7 @@ textarea {
     left: 0px; }
     .bottom-buttons .share-btns a, .signup .share-btns .share-btns a {
       float: none;
-      margin: 6px 0 0 -100px;
+      margin: 6px 0 0 -65px;
       -webkit-transition: margin-left 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       -moz-transition: margin-left 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transition: margin-left 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -240,9 +240,30 @@ textarea {
 
   to {
     transform: rotate(360deg); } }
+@-webkit-keyframes starPan {
+  from {
+    background-position: 0px center; }
+
+  to {
+    background-position: -743px center; } }
+@-moz-keyframes starPan {
+  from {
+    background-position: 0px center; }
+
+  to {
+    background-position: -743px center; } }
+@keyframes starPan {
+  from {
+    background-position: 0px center; }
+
+  to {
+    background-position: -743px center; } }
 .intro {
   text-align: center;
-  background: #32b9b1 url("../images/stars.png") repeat center center; }
+  background: #32b9b1 url("../images/stars.png") repeat center center;
+  -webkit-animation: starPan 20s infinite linear;
+  -moz-animation: starPan 20s infinite linear;
+  animation: starPan 20s infinite linear; }
   .intro .text {
     max-width: 850px;
     margin: 0 auto;
@@ -261,18 +282,23 @@ textarea {
     margin: 80px auto 0;
     -webkit-animation: spaceSpin 15s infinite linear;
     -moz-animation: spaceSpin 15s infinite linear;
-    animation: spaceSpin 15s infinite linear; }
+    animation: spaceSpin 15s infinite linear;
+    position: relative;
+    z-index: 100; }
   .intro .rocket {
     background: url("../images/rocket.png") no-repeat 0 0;
     background-size: 94px 154px;
     width: 94px;
     height: 154px;
     display: block;
-    -webkit-transform: rotate(-30deg);
-    -moz-transform: rotate(-30deg);
-    -ms-transform: rotate(-30deg);
-    -o-transform: rotate(-30deg);
-    transform: rotate(-30deg); }
+    -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    -ms-transform: rotate(-25deg);
+    -o-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+    position: absolute;
+    top: 110%;
+    left: 60%; }
     .intro .rocket .wrapper {
       position: relative; }
       .intro .rocket .wrapper .exhaust {
@@ -289,7 +315,7 @@ textarea {
     -o-transform: rotate(-10deg);
     transform: rotate(-10deg);
     position: absolute;
-    top: 40%;
+    top: 28%;
     left: 110%; }
     .intro .spaceship .wrapper {
       position: relative; }
@@ -312,7 +338,10 @@ textarea {
     -moz-transform: rotate(15deg);
     -ms-transform: rotate(15deg);
     -o-transform: rotate(15deg);
-    transform: rotate(15deg); }
+    transform: rotate(15deg);
+    position: absolute;
+    top: 60%;
+    left: -20%; }
     .intro .satellite .wrapper {
       position: relative; }
       .intro .satellite .wrapper .signal {
@@ -322,7 +351,10 @@ textarea {
     background-size: 108px 70px;
     width: 108px;
     height: 70px;
-    display: block; }
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 110%; }
 
 /*----------------------------------------------------------------------------------- */
 /*  Problem */
@@ -395,16 +427,6 @@ textarea {
     transform: scale(1) translate(20px, -100px) translateZ(0); } }
 .problem {
   padding-right: 125px; }
-  .problem .text {
-    position: absolute;
-    left: 100%;
-    margin: 0 0 0 60px;
-    width: 410px;
-    -webkit-animation-delay: 0.8s;
-    -moz-animation-delay: 0.8s;
-    -ms-animation-delay: 0.8s;
-    animation-delay: 0.8s;
-    opacity: 0; }
   .problem .laptop {
     background: url("../images/laptop.png") no-repeat 0 0;
     background-size: 554px 642px;
@@ -413,8 +435,8 @@ textarea {
     display: block;
     position: absolute;
     top: 50%;
-    left: 10%;
-    margin-top: -320px; }
+    left: 50%;
+    margin: -340px 0 0 -505px; }
     @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
       .problem .laptop {
         background: url("../images/laptop@2x.png") no-repeat 0 0;
@@ -423,6 +445,17 @@ textarea {
       position: relative;
       width: 100%;
       height: 100%; }
+    .problem .laptop .text {
+      position: absolute;
+      top: 15px;
+      left: 96%;
+      margin: 0 0 0 60px;
+      width: 420px;
+      -webkit-animation-delay: 0.8s;
+      -moz-animation-delay: 0.8s;
+      -ms-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+      opacity: 0; }
     .problem .laptop .pencil {
       background: url("../images/pencil.png") no-repeat 0 0;
       background-size: 24px 222px;
@@ -431,7 +464,7 @@ textarea {
       display: block;
       position: absolute;
       bottom: 25px;
-      left: 25px; }
+      left: 35px; }
     .problem .laptop .screen {
       background: url("../images/screen.gif") no-repeat 0 0;
       background-size: 392px 226px;
@@ -857,7 +890,8 @@ textarea {
       transition: all 0.4s; }
       .signup .subscribe-form input[type="email"]:focus {
         border: 3px solid #563373;
-        background-color: white; }
+        background-color: white;
+        color: black; }
         .signup .subscribe-form input[type="email"]:focus + input[type="submit"]:hover {
           background-color: #563373;
           color: white; }
@@ -957,6 +991,59 @@ textarea {
     display: table;
     clear: both; }
 
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 2.6em; }
+
+  p {
+    font-size: 16px; }
+
+  #fullPage-nav.right {
+    right: 15px; }
+
+  .bottom-buttons, .signup .share-btns {
+    bottom: 10px;
+    padding: 0 10px; }
+
+  .intro .text h1 {
+    margin-bottom: 20px; }
+  .intro .text p {
+    font-size: 20px; }
+  .intro .astronaut {
+    margin: 30px auto -30px; }
+
+  .problem .laptop {
+    margin-top: -315px;
+    margin-left: -490px;
+    background-size: 90%; }
+    .problem .laptop .text {
+      width: 380px;
+      top: 10px;
+      left: 90%;
+      margin-left: 40px; }
+    .problem .laptop .pencil {
+      display: none; }
+    .problem .laptop .coffee {
+      right: -480px; }
+    .problem .laptop .hand {
+      left: 90%;
+      background-size: 90%;
+      top: 258px;
+      margin-left: -1px; }
+    .problem .laptop .screen {
+      background-size: 90%;
+      top: 53px;
+      left: 115px; }
+
+  .themes .theme-options {
+    margin-top: -165px; }
+    .themes .theme-options .text {
+      margin-bottom: 45px; }
+      .themes .theme-options .text p {
+        max-width: 700px; }
+    .themes .theme-options .logos {
+      margin-top: 25px;
+      display: none; } }
 @media print {
   * {
     background: transparent !important;
