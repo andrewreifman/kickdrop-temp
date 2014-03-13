@@ -120,7 +120,7 @@ $(document).ready(function() {
   function spaceshipAnim() {
       $spaceship.animate({
           left: "-110%"
-      }, 8000, function() {
+      }, 8000, 'linear', function() {
           $spaceship.removeAttr("style");
 
           setTimeout(function() {
