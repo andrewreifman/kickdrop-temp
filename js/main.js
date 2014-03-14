@@ -40,7 +40,7 @@ $(document).ready(function() {
       }
       if(anchorLink == 'drops'){
         $('.drops .left-col .text').addClass('animated bounceInLeft');
-        $('.drops .text.ipad').addClass('animated bounceInLeft');
+        $('.drops .text.mobile').addClass('animated bounceInLeft');
       }
       if(anchorLink == 'signup'){
         $('.bottom-buttons').delay(600).animate({'bottom': '-100px'}, 300, 'easeInBack');

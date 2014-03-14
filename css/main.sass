@@ -102,6 +102,9 @@ textarea
   top: 15px
   z-index: 100
 
+  &.mobile
+    display: none !important
+
   .shoe
     margin-right: 8px
 
@@ -277,6 +280,9 @@ textarea
     position: relative
     z-index: 100
 
+  .astronaut2
+    @include animation(spaceSpin 15s infinite linear)
+
   .rocket
     @include bgImage("../images/rocket.png", 94px, 154px)
     @include transform(rotate(-25deg))
@@ -286,7 +292,8 @@ textarea
       position: relative
 
       .exhaust
-        @include position(absolute, 0 0 0 0)
+        @include bgImage("../images/exhaust@2x.gif", 42px, 82px)
+        @include position(absolute, 146px 0 0 26px)
 
   .spaceship
     @include bgImage("../images/spaceship.png", 94px, 80px)
@@ -309,7 +316,8 @@ textarea
       position: relative
 
       .signal
-        @include position(absolute, 0 0 0 0)
+        @include bgImage("../images/signal@2x.gif", 145px, 91px)
+        @include position(absolute, 74px 0 0 26px)
 
   .planet
     @include bgImage("../images/planet.png", 108px, 70px)
@@ -526,7 +534,7 @@ textarea
 .drops
   text-align: center
 
-  .text.ipad
+  .text.mobile
     display: none
     @include animation-delay(.4s)
     opacity: 0
@@ -921,7 +929,7 @@ textarea
   .drops
     padding: 0
 
-    .text.ipad
+    .text.mobile
       display: block
       margin: -15px 20px 25px
 
@@ -983,7 +991,7 @@ textarea
       margin-top: 210px
 
     &.completed
-      .text.ipad
+      .text.mobile
         margin-top: -200px
 
       .left-col
@@ -1002,7 +1010,7 @@ textarea
     font-size: 13px
 
   .section
-    padding: 0 15px
+    padding: 0
 
   .logo
     display: none
@@ -1075,6 +1083,72 @@ textarea
         height: 113px
         top: 29px
         left: 64px
+
+      .coffee
+        display: none
+
+  .themes
+    .theme-options
+      height: 180px
+      margin-top: -70px
+
+      .text
+        margin: 0 0 15px
+        padding: 0 15px
+
+      .wrapper
+        .browser
+          border-radius: 6px
+          border-width: 3px
+          width: 250px
+          box-shadow: 0 4px rgba(0, 0, 0, 0.08)
+
+          &.theme-main
+            background-size: 100%
+            width: 250px
+            margin-left: -125px
+            box-shadow: 0 4px rgba(0, 0, 0, 0.08), -25px 0 0 -20px rgba(0, 0, 0, 0.1), 25px 0 0 -20px rgba(0, 0, 0, 0.1)
+
+          .browser-bar
+            height: 11px
+            padding: 3px 0 0 3px
+            border-width: 2px
+
+            span
+              height: 4px
+              width: 4px
+              margin-right: 2px
+
+  .drops
+    .text.mobile
+      margin: 10px 0 15px
+      width: 100%
+
+    .left-col
+      width: 220px
+      margin: 0
+
+    .widget-container
+      height: 67px
+      width: 209px
+      border: 0
+
+      &.third
+        width: 65px
+        height: 65px
+
+      &.half
+        width: 101px
+
+    .widget
+      background-size: 100% !important
+      width: 100% !important
+      height: 100% !important
+      border-radius: 6px
+      border-width: 3px
+
+    .browser
+      display: none
 
 
 @media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)

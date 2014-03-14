@@ -75,6 +75,8 @@ textarea {
   left: 15px;
   top: 15px;
   z-index: 100; }
+  .logo.mobile {
+    display: none !important; }
   .logo .shoe {
     margin-right: 8px; }
 
@@ -285,6 +287,10 @@ textarea {
     animation: spaceSpin 15s infinite linear;
     position: relative;
     z-index: 100; }
+  .intro .astronaut2 {
+    -webkit-animation: spaceSpin 15s infinite linear;
+    -moz-animation: spaceSpin 15s infinite linear;
+    animation: spaceSpin 15s infinite linear; }
   .intro .rocket {
     background: url("../images/rocket.png") no-repeat 0 0;
     background-size: 94px 154px;
@@ -302,7 +308,14 @@ textarea {
     .intro .rocket .wrapper {
       position: relative; }
       .intro .rocket .wrapper .exhaust {
-        position: absolute; }
+        background: url("../images/exhaust@2x.gif") no-repeat 0 0;
+        background-size: 42px 82px;
+        width: 42px;
+        height: 82px;
+        display: block;
+        position: absolute;
+        top: 146px;
+        left: 26px; }
   .intro .spaceship {
     background: url("../images/spaceship.png") no-repeat 0 0;
     background-size: 94px 80px;
@@ -345,7 +358,14 @@ textarea {
     .intro .satellite .wrapper {
       position: relative; }
       .intro .satellite .wrapper .signal {
-        position: absolute; }
+        background: url("../images/signal@2x.gif") no-repeat 0 0;
+        background-size: 145px 91px;
+        width: 145px;
+        height: 91px;
+        display: block;
+        position: absolute;
+        top: 74px;
+        left: 26px; }
   .intro .planet {
     background: url("../images/planet.png") no-repeat 0 0;
     background-size: 108px 70px;
@@ -661,7 +681,7 @@ textarea {
 /*----------------------------------------------------------------------------------- */
 .drops {
   text-align: center; }
-  .drops .text.ipad {
+  .drops .text.mobile {
     display: none;
     -webkit-animation-delay: 0.4s;
     -moz-animation-delay: 0.4s;
@@ -1057,10 +1077,10 @@ textarea {
 
   .drops {
     padding: 0; }
-    .drops .text.ipad {
+    .drops .text.mobile {
       display: block;
       margin: -15px 20px 25px; }
-      .drops .text.ipad p {
+      .drops .text.mobile p {
         max-width: 800px;
         margin: 0 auto; }
     .drops .left-col {
@@ -1110,7 +1130,7 @@ textarea {
             margin: 10px 6px; }
     .drops .text.completed {
       margin-top: 210px; }
-    .drops.completed .text.ipad {
+    .drops.completed .text.mobile {
       margin-top: -200px; }
     .drops.completed .left-col {
       margin-right: 0; }
@@ -1126,7 +1146,7 @@ textarea {
     font-size: 13px; }
 
   .section {
-    padding: 0 15px; }
+    padding: 0; }
 
   .logo {
     display: none; }
@@ -1188,7 +1208,58 @@ textarea {
       width: 196px;
       height: 113px;
       top: 29px;
-      left: 64px; } }
+      left: 64px; }
+    .problem .laptop .coffee {
+      display: none; }
+
+  .themes .theme-options {
+    height: 180px;
+    margin-top: -70px; }
+    .themes .theme-options .text {
+      margin: 0 0 15px;
+      padding: 0 15px; }
+    .themes .theme-options .wrapper .browser {
+      border-radius: 6px;
+      border-width: 3px;
+      width: 250px;
+      box-shadow: 0 4px rgba(0, 0, 0, 0.08); }
+      .themes .theme-options .wrapper .browser.theme-main {
+        background-size: 100%;
+        width: 250px;
+        margin-left: -125px;
+        box-shadow: 0 4px rgba(0, 0, 0, 0.08), -25px 0 0 -20px rgba(0, 0, 0, 0.1), 25px 0 0 -20px rgba(0, 0, 0, 0.1); }
+      .themes .theme-options .wrapper .browser .browser-bar {
+        height: 11px;
+        padding: 3px 0 0 3px;
+        border-width: 2px; }
+        .themes .theme-options .wrapper .browser .browser-bar span {
+          height: 4px;
+          width: 4px;
+          margin-right: 2px; }
+
+  .drops .text.mobile {
+    margin: 10px 0 15px;
+    width: 100%; }
+  .drops .left-col {
+    width: 220px;
+    margin: 0; }
+  .drops .widget-container {
+    height: 67px;
+    width: 209px;
+    border: 0; }
+    .drops .widget-container.third {
+      width: 65px;
+      height: 65px; }
+    .drops .widget-container.half {
+      width: 101px; }
+  .drops .widget {
+    background-size: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 6px;
+    border-width: 3px; }
+  .drops .browser {
+    display: none; } }
 @media print {
   * {
     background: transparent !important;
