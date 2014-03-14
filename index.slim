@@ -22,9 +22,9 @@ html
     script src="js/main.js"
 
   body
-    .logo
+    .logo.fixed
       img.shoe src="images/shoe.png" width="46"
-      img.text src="images/kickdrop-text.png" width="112"
+      img.logo-text src="images/kickdrop-text.png" width="112"
 
     .bottom-buttons
       .wrapper
@@ -46,6 +46,9 @@ html
             span Share on Google+
 
     .section.intro
+      .logo.mobile
+        img.shoe src="images/shoe.png" width="38"
+        img.logo-text src="images/kickdrop-text.png" width="96"
       .text.animated.bounceInDown
         h1 Kick-ass themes. Fresh drops.
         p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.
@@ -133,9 +136,13 @@ html
         h1 You are big winner!!!
         p Your site is looking fresh and is good to go! Just one more thing left to do…
 
+      .text.ipad
+        h1 Collect your drops.
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.
+
       .left-col
         .text
-          h1 Drops for every occassion.
+          h1 Collect your drops.
           p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel.
         .widgets.clearfix
           .widget-container.chart
@@ -155,7 +162,7 @@ html
           span
           span
           span
-        .browser-content
+        .browser-content.clearfix
           .box.half.map title="map"
           .box.half.calendar title="calendar"
           .box.third.chat title="chat"

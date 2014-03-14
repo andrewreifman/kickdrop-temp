@@ -661,6 +661,16 @@ textarea {
 /*----------------------------------------------------------------------------------- */
 .drops {
   text-align: center; }
+  .drops .text.ipad {
+    display: none;
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    -ms-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    opacity: 0;
+    -webkit-transition: all 0.4s 1s;
+    -moz-transition: all 0.4s 1s;
+    transition: all 0.4s 1s; }
   .drops .left-col {
     position: absolute;
     top: 50%;
@@ -991,7 +1001,7 @@ textarea {
     display: table;
     clear: both; }
 
-@media only screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   h1 {
     font-size: 2.6em; }
 
@@ -1010,7 +1020,7 @@ textarea {
   .intro .text p {
     font-size: 20px; }
   .intro .astronaut {
-    margin: 30px auto -30px; }
+    margin: 35px auto -45px; }
 
   .problem .laptop {
     margin-top: -315px;
@@ -1043,7 +1053,142 @@ textarea {
         max-width: 700px; }
     .themes .theme-options .logos {
       margin-top: 25px;
-      display: none; } }
+      display: none; }
+
+  .drops {
+    padding: 0; }
+    .drops .text.ipad {
+      display: block;
+      margin: -15px 20px 25px; }
+      .drops .text.ipad p {
+        max-width: 800px;
+        margin: 0 auto; }
+    .drops .left-col {
+      position: relative;
+      margin: -20px 25px 0 0;
+      display: inline-block;
+      vertical-align: middle;
+      height: auto;
+      width: 420px;
+      top: 0;
+      right: 0;
+      -webkit-transition: all 0.5s 1s;
+      -moz-transition: all 0.5s 1s;
+      transition: all 0.5s 1s; }
+      .drops .left-col .text {
+        display: none; }
+      .drops .left-col .widget-container.third {
+        margin: 0 7px 12px; }
+      .drops .left-col .widget-container.half {
+        margin: 0 7px 0; }
+      .drops .left-col .widget-container.chart {
+        margin: 0 0 12px; }
+      .drops .left-col .widget-container.profile {
+        margin-right: 0; }
+      .drops .left-col .widget-container.weather {
+        margin-left: 0; }
+      .drops .left-col .widget-container.chat {
+        margin-bottom: 12px; }
+      .drops .left-col .widget-container.calendar {
+        margin-left: 0; }
+      .drops .left-col .widget-container.map {
+        margin-right: 0; }
+    .drops .browser {
+      margin: 0;
+      height: 475px;
+      width: 450px;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      top: 0;
+      left: 0; }
+      .drops .browser .browser-content {
+        padding: 12px 6px; }
+        .drops .browser .browser-content .box {
+          margin: 0 5px; }
+          .drops .browser .browser-content .box.third {
+            margin: 10px 6px; }
+    .drops .text.completed {
+      margin-top: 210px; }
+    .drops.completed .text.ipad {
+      margin-top: -200px; }
+    .drops.completed .left-col {
+      margin-right: 0; }
+    .drops.completed .browser {
+      margin-top: -40px;
+      margin-left: -420px; } }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.4em;
+    margin-bottom: 5px; }
+
+  p {
+    font-size: 13px; }
+
+  .section {
+    padding: 0 15px; }
+
+  .logo {
+    display: none; }
+    .logo.mobile {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: block;
+      margin: -40px 0 10px; }
+
+  #fullPage-nav.right {
+    display: none; }
+
+  .bottom-buttons a, .signup .share-btns a {
+    width: 44px;
+    height: 44px;
+    margin-right: 4px; }
+    .bottom-buttons a:hover span, .signup .share-btns a:hover span, .bottom-buttons a.share.active span, .signup .share-btns a.share.active span {
+      background-position: center center; }
+    .bottom-buttons a.signup-btn, .signup .share-btns a.signup-btn {
+      line-height: 44px;
+      font-size: 14px;
+      padding: 0 20px; }
+
+  .intro .text h1 {
+    margin-bottom: 10px;
+    font-size: 1.6em; }
+  .intro .text p {
+    font-size: 14px; }
+  .intro .astronaut {
+    margin: 15px auto -25px;
+    background-size: 100%;
+    width: 100px;
+    height: 160px; }
+  .intro .rocket, .intro .satellite, .intro .spaceship, .intro .planet {
+    display: none; }
+
+  .problem .laptop {
+    background-size: 100%;
+    width: 277px;
+    height: 321px;
+    margin: 0;
+    top: -15px;
+    left: -120px; }
+    .problem .laptop .text {
+      width: 210px;
+      top: 30px;
+      left: 100%;
+      margin-left: 20px; }
+    .problem .laptop .hand {
+      background-size: 100%;
+      width: 224px;
+      height: 305px;
+      left: 100%;
+      top: 228px;
+      margin-left: 0; }
+    .problem .laptop .screen {
+      background-size: 100%;
+      width: 196px;
+      height: 113px;
+      top: 29px;
+      left: 64px; } }
 @media print {
   * {
     background: transparent !important;

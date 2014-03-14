@@ -12,10 +12,10 @@ $(document).ready(function() {
     menu: '#menu',
     navigationTooltips: ['Intro', 'Problem', 'Themes', 'Drops', 'Signup'],
     scrollingSpeed: 300,
-    fixedElements: '.logo, .bottom-buttons',
+    fixedElements: '.logo.fixed, .bottom-buttons',
     onLeave: function(index, direction){
       if(index == '1' && direction =='down'){
-        $('.logo .text').delay(800).animate({'margin-top': '-200px'}, 300, 'easeInBack');
+        $('.logo .logo-text').delay(800).animate({'margin-top': '-200px'}, 300, 'easeInBack');
         $('.intro').addClass('intro-hidden');
       }
       if(index == '5' && direction =='up'){
@@ -24,7 +24,7 @@ $(document).ready(function() {
     },
     afterLoad: function(anchorLink){
       if(anchorLink == 'intro'){
-        $('.logo .text').delay(800).animate({'margin-top': '0px'}, 200, 'easeOutBack');
+        $('.logo .logo-text').delay(800).animate({'margin-top': '0px'}, 200, 'easeOutBack');
         $('.intro').removeClass('intro-hidden');
       }
       if(anchorLink == 'problem'){
@@ -39,7 +39,8 @@ $(document).ready(function() {
         $('.theme-4').delay(800).animate({'margin-left': '-80px'}, 300, 'easeOutBack');
       }
       if(anchorLink == 'drops'){
-        $('.drops .text').addClass('animated bounceInLeft');
+        $('.drops .left-col .text').addClass('animated bounceInLeft');
+        $('.drops .text.ipad').addClass('animated bounceInLeft');
       }
       if(anchorLink == 'signup'){
         $('.bottom-buttons').delay(600).animate({'bottom': '-100px'}, 300, 'easeInBack');
@@ -111,8 +112,9 @@ $(document).ready(function() {
         $(ui.draggable).detach().css({top: 0,left: 0}).appendTo(this);
         $(this).addClass('complete');
 
-        if ($('.browser-content .complete').length === 6) {
+        if ($('.browser-content .complete').length == 1) {
           $('.drops').addClass('completed');
+          $('.drops .text.ipad').addClass('bounceOutUp');
         }
       }
     });

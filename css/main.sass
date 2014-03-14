@@ -526,6 +526,12 @@ textarea
 .drops
   text-align: center
 
+  .text.ipad
+    display: none
+    @include animation-delay(.4s)
+    opacity: 0
+    @include transition(all .4s 1s)
+
   .left-col
     @include position(absolute, 50% 50% 0 0)
     width: 482px
@@ -855,7 +861,7 @@ textarea
   *zoom: 1
 
 
-@media only screen and (max-width: 1024px)
+@media (max-width: 1024px)
   h1
     font-size: 2.6em
   p
@@ -872,7 +878,8 @@ textarea
       p
         font-size: 20px
     .astronaut
-      margin: 30px auto -30px
+      margin: 35px auto -45px
+
   .problem
     .laptop
       margin-top: -315px
@@ -910,6 +917,165 @@ textarea
       .logos
         margin-top: 25px
         display: none
+
+  .drops
+    padding: 0
+
+    .text.ipad
+      display: block
+      margin: -15px 20px 25px
+
+      p
+        max-width: 800px
+        margin: 0 auto
+
+    .left-col
+      position: relative
+      margin: -20px 25px 0 0
+      display: inline-block
+      vertical-align: middle
+      height: auto
+      width: 420px
+      top: 0
+      right: 0
+      @include transition(all .5s 1s)
+
+      .text
+        display: none
+
+      .widget-container
+        &.third
+          margin: 0 7px 12px
+        &.half
+          margin: 0 7px 0
+        &.chart
+          margin: 0 0 12px
+        &.profile
+          margin-right: 0
+        &.weather
+          margin-left: 0
+        &.chat
+          margin-bottom: 12px
+        &.calendar
+          margin-left: 0
+        &.map
+          margin-right: 0
+
+    .browser
+      margin: 0
+      height: 475px
+      width: 450px
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      top: 0
+      left: 0
+
+      .browser-content
+        padding: 12px 6px
+
+        .box
+          margin: 0 5px
+          &.third
+            margin: 10px 6px
+
+    .text.completed
+      margin-top: 210px
+
+    &.completed
+      .text.ipad
+        margin-top: -200px
+
+      .left-col
+        margin-right: 0
+
+      .browser
+        margin-top: -40px
+        margin-left: -420px
+
+
+@media (max-width: 768px)
+  h1
+    font-size: 1.4em
+    margin-bottom: 5px
+  p
+    font-size: 13px
+
+  .section
+    padding: 0 15px
+
+  .logo
+    display: none
+    &.mobile
+      position: relative
+      top: 0
+      left: 0
+      display: block
+      margin: -40px 0 10px
+
+  #fullPage-nav.right
+    display: none
+
+  .bottom-buttons
+    a
+      width: 44px
+      height: 44px
+      margin-right: 4px
+
+      &:hover span, &.share.active span
+        background-position: center center
+
+      &.signup-btn
+        line-height: 44px
+        font-size: 14px
+        padding: 0 20px
+
+  .intro
+    .text
+      h1
+        margin-bottom: 10px
+        font-size: 1.6em
+      p
+        font-size: 14px
+    .astronaut
+      margin: 15px auto -25px
+      background-size: 100%
+      width: 100px
+      height: 160px
+
+    .rocket,.satellite,.spaceship,.planet
+      display: none
+
+  .problem
+    .laptop
+      background-size: 100%
+      width: 277px
+      height: 321px
+      margin: 0
+      top: -15px
+      left: -120px
+
+      .text
+        width: 210px
+        top: 30px
+        left: 100%
+        margin-left: 20px
+
+      .hand
+        background-size: 100%
+        width: 224px
+        height: 305px
+        left: 100%
+        top: 228px
+        margin-left: 0
+
+      .screen
+        background-size: 100%
+        width: 196px
+        height: 113px
+        top: 29px
+        left: 64px
+
 
 @media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)
 
