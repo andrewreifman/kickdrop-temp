@@ -269,28 +269,49 @@ textarea {
   .intro .text {
     max-width: 850px;
     margin: 0 auto;
-    opacity: 0; }
+    opacity: 0;
+    position: relative;
+    z-index: 10; }
     .intro .text h1 {
       font-size: 60px;
       margin-bottom: 25px; }
     .intro .text p {
       font-size: 22px; }
   .intro .astronaut {
-    background: url("../images/astronaut.gif") no-repeat 0 0;
-    background-size: 252px 335px;
     width: 252px;
     height: 335px;
-    display: block;
     margin: 60px auto 0;
-    -webkit-animation: spaceSpin 15s infinite linear;
-    -moz-animation: spaceSpin 15s infinite linear;
-    animation: spaceSpin 15s infinite linear;
     position: relative;
     z-index: 100; }
-    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-      .intro .astronaut {
-        background: url("../images/astronaut@2x.gif") no-repeat 0 0;
-        background-size: 252px 335px; } }
+    .intro .astronaut .body {
+      background: url("../images/astronaut.gif") no-repeat 0 0;
+      background-size: 252px 335px;
+      width: 252px;
+      height: 335px;
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      -webkit-animation: spaceSpin 15s infinite linear;
+      -moz-animation: spaceSpin 15s infinite linear;
+      animation: spaceSpin 15s infinite linear; }
+      @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        .intro .astronaut .body {
+          background: url("../images/astronaut@2x.gif") no-repeat 0 0;
+          background-size: 252px 335px; } }
+    .intro .astronaut .cord {
+      background: url("../images/cord.gif") no-repeat 0 0;
+      background-size: 275px 530px;
+      width: 275px;
+      height: 530px;
+      display: block;
+      position: absolute;
+      top: 135px;
+      left: 45%; }
+      @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        .intro .astronaut .cord {
+          background: url("../images/cord@2x.gif") no-repeat 0 0;
+          background-size: 275px 530px; } }
   .intro .rocket {
     background: url("../images/rocket.png") no-repeat 0 0;
     background-size: 94px 154px;
@@ -308,14 +329,18 @@ textarea {
     .intro .rocket .wrapper {
       position: relative; }
       .intro .rocket .wrapper .exhaust {
-        background: url("../images/exhaust@2x.gif") no-repeat 0 0;
+        background: url("../images/exhaust.gif") no-repeat 0 0;
         background-size: 42px 82px;
         width: 42px;
         height: 82px;
         display: block;
         position: absolute;
-        top: 146px;
+        top: 149px;
         left: 26px; }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .intro .rocket .wrapper .exhaust {
+            background: url("../images/exhaust@2x.gif") no-repeat 0 0;
+            background-size: 42px 82px; } }
   .intro .spaceship {
     background: url("../images/spaceship.png") no-repeat 0 0;
     background-size: 94px 80px;
@@ -329,7 +354,8 @@ textarea {
     transform: rotate(-10deg);
     position: absolute;
     top: 28%;
-    left: 110%; }
+    left: 110%;
+    z-index: 20; }
     .intro .spaceship .wrapper {
       position: relative; }
       .intro .spaceship .wrapper .beams {
@@ -341,6 +367,10 @@ textarea {
         position: absolute;
         top: 80px;
         left: 12px; }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .intro .spaceship .wrapper .beams {
+            background: url("../images/beams@2x.gif") no-repeat 0 0;
+            background-size: 72px 78px; } }
   .intro .satellite {
     background: url("../images/satellite.png") no-repeat 0 0;
     background-size: 198px 88px;
@@ -358,7 +388,7 @@ textarea {
     .intro .satellite .wrapper {
       position: relative; }
       .intro .satellite .wrapper .signal {
-        background: url("../images/signal@2x.gif") no-repeat 0 0;
+        background: url("../images/signal.gif") no-repeat 0 0;
         background-size: 145px 91px;
         width: 145px;
         height: 91px;
@@ -366,15 +396,23 @@ textarea {
         position: absolute;
         top: 74px;
         left: 26px; }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .intro .satellite .wrapper .signal {
+            background: url("../images/signal@2x.gif") no-repeat 0 0;
+            background-size: 145px 91px; } }
   .intro .planet {
-    background: url("../images/planet.png") no-repeat 0 0;
-    background-size: 108px 70px;
-    width: 108px;
+    background: url("../images/planet.gif") no-repeat 0 0;
+    background-size: 120px 70px;
+    width: 120px;
     height: 70px;
     display: block;
     position: absolute;
     top: 50%;
     left: 110%; }
+    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+      .intro .planet {
+        background: url("../images/planet@2x.gif") no-repeat 0 0;
+        background-size: 120px 70px; } }
 
 /*----------------------------------------------------------------------------------- */
 /*  Problem */
@@ -385,7 +423,7 @@ textarea {
     -webkit-transform: scale(0.2) translate(0, 0) translateZ(0); }
 
   50% {
-    background: rgba(255, 255, 255, 0.4); }
+    background: rgba(255, 255, 255, 0.3); }
 
   100% {
     background: transparent;
@@ -396,7 +434,7 @@ textarea {
     -moz-transform: scale(0.2) translate(0, 0) translateZ(0); }
 
   50% {
-    background: rgba(255, 255, 255, 0.4); }
+    background: rgba(255, 255, 255, 0.3); }
 
   100% {
     background: transparent;
@@ -407,7 +445,7 @@ textarea {
     transform: scale(0.2) translate(0, 0) translateZ(0); }
 
   50% {
-    background: rgba(255, 255, 255, 0.4); }
+    background: rgba(255, 255, 255, 0.3); }
 
   100% {
     background: transparent;
@@ -418,7 +456,7 @@ textarea {
     -webkit-transform: scale(0.2) translate(0, 0) translateZ(0); }
 
   50% {
-    background: rgba(255, 255, 255, 0.4); }
+    background: rgba(255, 255, 255, 0.3); }
 
   100% {
     background: transparent;
@@ -429,7 +467,7 @@ textarea {
     -moz-transform: scale(0.2) translate(0, 0) translateZ(0); }
 
   50% {
-    background: rgba(255, 255, 255, 0.4); }
+    background: rgba(255, 255, 255, 0.3); }
 
   100% {
     background: transparent;
@@ -440,32 +478,40 @@ textarea {
     transform: scale(0.2) translate(0, 0) translateZ(0); }
 
   50% {
-    background: rgba(255, 255, 255, 0.4); }
+    background: rgba(255, 255, 255, 0.3); }
 
   100% {
     background: transparent;
     transform: scale(1) translate(20px, -100px) translateZ(0); } }
 .problem {
   padding-right: 125px; }
-  .problem .laptop {
-    background: url("../images/laptop.png") no-repeat 0 0;
-    background-size: 554px 642px;
+  .problem .desk {
     width: 554px;
     height: 642px;
-    display: block;
     position: absolute;
-    top: 50%;
+    top: 56%;
     left: 50%;
-    margin: -340px 0 0 -505px; }
-    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-      .problem .laptop {
-        background: url("../images/laptop@2x.png") no-repeat 0 0;
-        background-size: 555px 642px; } }
-    .problem .laptop .wrapper {
+    margin: -340px 0 0 -560px; }
+    .problem .desk > .wrapper {
       position: relative;
       width: 100%;
       height: 100%; }
-    .problem .laptop .text {
+    .problem .desk .laptop {
+      width: 100%;
+      height: 100%;
+      background: url("../images/laptop.png") no-repeat 0 0;
+      background-size: 554px 642px;
+      width: 554px;
+      height: 642px;
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px; }
+      @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        .problem .desk .laptop {
+          background: url("../images/laptop@2x.png") no-repeat 0 0;
+          background-size: 555px 642px; } }
+    .problem .desk .text {
       position: absolute;
       top: 15px;
       left: 96%;
@@ -476,7 +522,7 @@ textarea {
       -ms-animation-delay: 0.8s;
       animation-delay: 0.8s;
       opacity: 0; }
-    .problem .laptop .pencil {
+    .problem .desk .pencil {
       background: url("../images/pencil.png") no-repeat 0 0;
       background-size: 24px 222px;
       width: 24px;
@@ -485,7 +531,7 @@ textarea {
       position: absolute;
       bottom: 25px;
       left: 35px; }
-    .problem .laptop .screen {
+    .problem .desk .screen {
       background: url("../images/screen.gif") no-repeat 0 0;
       background-size: 392px 226px;
       width: 392px;
@@ -495,19 +541,24 @@ textarea {
       top: 58px;
       left: 128px; }
       @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-        .problem .laptop .screen {
+        .problem .desk .screen {
           background: url("../images/screen@2x.gif") no-repeat 0 0;
           background-size: 392px 226px; } }
-    .problem .laptop .hand {
+    .problem .desk .hand {
       background: url("../images/hand.gif") no-repeat 0 0;
-      background-size: 448px 610px;
-      width: 448px;
-      height: 610px;
+      background-size: 400px 570px;
+      width: 400px;
+      height: 570px;
       display: block;
       position: absolute;
-      top: 290px;
-      left: 100%; }
-    .problem .laptop .coffee {
+      top: 292px;
+      left: 100%;
+      margin-left: -50px; }
+      @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        .problem .desk .hand {
+          background: url("../images/hand@2x.gif") no-repeat 0 0;
+          background-size: 400px 570px; } }
+    .problem .desk .coffee {
       background: url("../images/coffee.gif") no-repeat 0 0;
       background-size: 171px 162px;
       width: 171px;
@@ -516,16 +567,17 @@ textarea {
       position: absolute;
       top: 360px;
       right: -580px; }
-      .problem .laptop .coffee .wrapper {
-        position: relative; }
-        .problem .laptop .coffee .wrapper .smoke {
+      .problem .desk .coffee .wrapper {
+        position: relative;
+        height: 100%; }
+        .problem .desk .coffee .wrapper .smoke {
           position: absolute;
           z-index: 3;
           width: 1px;
           height: 160px;
           left: 66px;
           bottom: 85px; }
-          .problem .laptop .coffee .wrapper .smoke span {
+          .problem .desk .coffee .wrapper .smoke span {
             display: block;
             position: absolute;
             bottom: -35px;
@@ -540,42 +592,42 @@ textarea {
             -ms-transform: scale(0.2);
             -o-transform: scale(0.2);
             transform: scale(0.2); }
-            .problem .laptop .coffee .wrapper .smoke span.s0 {
-              -webkit-animation: smokeL 10s 0s infinite;
-              -moz-animation: smokeL 10s 0s infinite;
-              animation: smokeL 10s 0s infinite; }
-            .problem .laptop .coffee .wrapper .smoke span.s1 {
-              -webkit-animation: smokeR 10s 1s infinite;
-              -moz-animation: smokeR 10s 1s infinite;
-              animation: smokeR 10s 1s infinite; }
-            .problem .laptop .coffee .wrapper .smoke span.s2 {
-              -webkit-animation: smokeL 10s 2s infinite;
-              -moz-animation: smokeL 10s 2s infinite;
-              animation: smokeL 10s 2s infinite; }
-            .problem .laptop .coffee .wrapper .smoke span.s3 {
-              -webkit-animation: smokeR 10s 3s infinite;
-              -moz-animation: smokeR 10s 3s infinite;
-              animation: smokeR 10s 3s infinite; }
-            .problem .laptop .coffee .wrapper .smoke span.s4 {
-              -webkit-animation: smokeL 10s 4s infinite;
-              -moz-animation: smokeL 10s 4s infinite;
-              animation: smokeL 10s 4s infinite; }
-            .problem .laptop .coffee .wrapper .smoke span.s5 {
-              -webkit-animation: smokeR 10s 5s infinite;
-              -moz-animation: smokeR 10s 5s infinite;
-              animation: smokeR 10s 5s infinite; }
-            .problem .laptop .coffee .wrapper .smoke span.s6 {
-              -webkit-animation: smokeL 10s 6s infinite;
-              -moz-animation: smokeL 10s 6s infinite;
-              animation: smokeL 10s 6s infinite; }
-            .problem .laptop .coffee .wrapper .smoke span.s7 {
-              -webkit-animation: smokeR 10s 7s infinite;
-              -moz-animation: smokeR 10s 7s infinite;
-              animation: smokeR 10s 7s infinite; }
-            .problem .laptop .coffee .wrapper .smoke span.s8 {
-              -webkit-animation: smokeL 10s 8s infinite;
-              -moz-animation: smokeL 10s 8s infinite;
-              animation: smokeL 10s 8s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s0 {
+              -webkit-animation: smokeL 12s 0s infinite;
+              -moz-animation: smokeL 12s 0s infinite;
+              animation: smokeL 12s 0s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s1 {
+              -webkit-animation: smokeR 12s 1s infinite;
+              -moz-animation: smokeR 12s 1s infinite;
+              animation: smokeR 12s 1s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s2 {
+              -webkit-animation: smokeL 12s 2s infinite;
+              -moz-animation: smokeL 12s 2s infinite;
+              animation: smokeL 12s 2s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s3 {
+              -webkit-animation: smokeR 12s 3s infinite;
+              -moz-animation: smokeR 12s 3s infinite;
+              animation: smokeR 12s 3s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s4 {
+              -webkit-animation: smokeL 12s 4s infinite;
+              -moz-animation: smokeL 12s 4s infinite;
+              animation: smokeL 12s 4s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s5 {
+              -webkit-animation: smokeR 12s 5s infinite;
+              -moz-animation: smokeR 12s 5s infinite;
+              animation: smokeR 12s 5s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s6 {
+              -webkit-animation: smokeL 12s 6s infinite;
+              -moz-animation: smokeL 12s 6s infinite;
+              animation: smokeL 12s 6s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s7 {
+              -webkit-animation: smokeR 12s 7s infinite;
+              -moz-animation: smokeR 12s 7s infinite;
+              animation: smokeR 12s 7s infinite; }
+            .problem .desk .coffee .wrapper .smoke span.s8 {
+              -webkit-animation: smokeL 12s 8s infinite;
+              -moz-animation: smokeL 12s 8s infinite;
+              animation: smokeL 12s 8s infinite; }
 
 /*----------------------------------------------------------------------------------- */
 /*  Free themes */
@@ -588,20 +640,32 @@ textarea {
     position: absolute;
     bottom: 100%;
     margin-bottom: 50px;
-    -webkit-animation-delay: 1.5s;
-    -moz-animation-delay: 1.5s;
-    -ms-animation-delay: 1.5s;
-    animation-delay: 1.5s;
+    -webkit-animation-delay: 2.8s;
+    -moz-animation-delay: 2.8s;
+    -ms-animation-delay: 2.8s;
+    animation-delay: 2.8s;
     opacity: 0; }
     .themes .text p {
       max-width: 800px;
       margin: 0 auto; }
+  .themes .logos {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    margin-top: 45px;
+    -webkit-animation-delay: 2.8s;
+    -moz-animation-delay: 2.8s;
+    -ms-animation-delay: 2.8s;
+    animation-delay: 2.8s;
+    opacity: 0; }
+    .themes .logos img {
+      margin: 0 15px; }
   .themes .theme-options {
     height: 400px;
     width: 100%;
     position: absolute;
     top: 50%;
-    margin-top: -170px; }
+    margin-top: -180px; }
     .themes .theme-options .wrapper {
       position: relative;
       width: 100%;
@@ -635,46 +699,83 @@ textarea {
             margin-right: 4px;
             vertical-align: top; }
         .themes .theme-options .wrapper .browser.theme-main {
-          box-shadow: 0 12px 0 -5px rgba(0, 0, 0, 0.08), -30px 0 0 -20px rgba(0, 0, 0, 0.1), 30px 0 0 -20px rgba(0, 0, 0, 0.1);
-          background: url("../images/theme-main.png") no-repeat 0 0;
-          background-size: 488px 388px;
-          width: 488px;
-          height: 388px;
+          box-shadow: 0 12px 0 -5px rgba(0, 0, 0, 0.08);
+          height: 0%;
+          width: 0px;
+          position: relative;
+          z-index: 10;
+          top: 0;
+          left: 0;
+          margin: 197px auto 0;
           display: block;
-          height: 100%;
-          width: 500px; }
-          @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-            .themes .theme-options .wrapper .browser.theme-main {
-              background: url("../images/theme-main@2x.png") no-repeat 0 0;
-              background-size: 488px 388px; } }
+          border-width: 0;
+          -webkit-transition: all 0.4s 0.6s, width 0.4s 1s, border-width 0.2s 0.5s;
+          -moz-transition: all 0.4s 0.6s, width 0.4s 1s, border-width 0.2s 0.5s;
+          transition: all 0.4s 0.6s, width 0.4s 1s, border-width 0.2s 0.5s; }
+          .themes .theme-options .wrapper .browser.theme-main .image {
+            background: url("../images/theme-main.gif") no-repeat 0 0;
+            background-size: 488px 388px;
+            width: 488px;
+            height: 388px;
+            display: block;
+            display: none; }
+            @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+              .themes .theme-options .wrapper .browser.theme-main .image {
+                background: url("../images/theme-main@2x.gif") no-repeat 0 0;
+                background-size: 488px 388px; } }
+          .themes .theme-options .wrapper .browser.theme-main.open {
+            width: 500px;
+            height: 100%;
+            margin-top: 0;
+            border-width: 6px; }
         .themes .theme-options .wrapper .browser.theme-1 {
+          background: url("../images/theme-1.gif") no-repeat 0 0;
+          background-size: 140px 288px;
+          width: 140px;
+          height: 288px;
+          display: block;
+          background-position: left 22px;
+          width: 500px;
           height: auto;
           top: 40px;
-          bottom: 40px; }
+          bottom: 40px;
+          display: none; }
         .themes .theme-options .wrapper .browser.theme-2 {
+          background: url("../images/theme-2.gif") no-repeat 0 0;
+          background-size: 140px 328px;
+          width: 140px;
+          height: 328px;
+          display: block;
+          background-position: left 22px;
+          width: 500px;
           height: auto;
           top: 20px;
-          bottom: 20px; }
+          bottom: 20px;
+          display: none; }
         .themes .theme-options .wrapper .browser.theme-3 {
+          background: url("../images/theme-3.gif") no-repeat 0 0;
+          background-size: 140px 328px;
+          width: 140px;
+          height: 328px;
+          display: block;
+          background-position: right 22px;
+          width: 500px;
           height: auto;
           top: 20px;
-          bottom: 20px; }
+          bottom: 20px;
+          display: none; }
         .themes .theme-options .wrapper .browser.theme-4 {
+          background: url("../images/theme-4.gif") no-repeat 0 0;
+          background-size: 140px 288px;
+          width: 140px;
+          height: 288px;
+          display: block;
+          background-position: right 22px;
+          width: 500px;
           height: auto;
           top: 40px;
-          bottom: 40px; }
-  .themes .logos {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    margin-top: 45px;
-    -webkit-animation-delay: 1.5s;
-    -moz-animation-delay: 1.5s;
-    -ms-animation-delay: 1.5s;
-    animation-delay: 1.5s;
-    opacity: 0; }
-    .themes .logos img {
-      margin: 0 15px; }
+          bottom: 40px;
+          display: none; }
 
 /*----------------------------------------------------------------------------------- */
 /*  Drops */
@@ -830,7 +931,7 @@ textarea {
     height: 660px;
     display: block;
     background-color: #f19849;
-    background-position: center 100px;
+    background-position: center center;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -933,10 +1034,9 @@ textarea {
           color: white; }
     .signup .subscribe-form input[type="submit"] {
       border: 3px solid #563373;
-      background-color: transparent;
+      background-color: #ab65e6;
       width: 140px;
       border-radius: 0 10px 10px 0;
-      padding: 8px;
       height: 60px;
       color: rgba(0, 0, 0, 0.5);
       font-family: "museo-sans", sans-serif;
@@ -1048,31 +1148,31 @@ textarea {
   .intro .astronaut {
     margin: 35px auto -45px; }
 
-  .problem .laptop {
-    margin-top: -315px;
-    margin-left: -490px;
-    background-size: 90%; }
-    .problem .laptop .text {
+  .problem .desk {
+    margin-top: -350px;
+    margin-left: -490px; }
+    .problem .desk .text {
       width: 380px;
-      top: 10px;
+      top: 0;
       left: 90%;
       margin-left: 40px; }
-    .problem .laptop .pencil {
+    .problem .desk .laptop {
+      background-size: 90%; }
+    .problem .desk .pencil {
       display: none; }
-    .problem .laptop .coffee {
-      right: -480px; }
-    .problem .laptop .hand {
+    .problem .desk .coffee {
+      right: -460px; }
+    .problem .desk .hand {
       left: 90%;
       background-size: 90%;
-      top: 258px;
-      margin-left: -1px; }
-    .problem .laptop .screen {
+      top: 258px; }
+    .problem .desk .screen {
       background-size: 90%;
       top: 53px;
       left: 115px; }
 
   .themes .theme-options {
-    margin-top: -165px; }
+    margin-top: -180px; }
     .themes .theme-options .text {
       margin-bottom: 45px; }
       .themes .theme-options .text p {
@@ -1145,8 +1245,11 @@ textarea {
       margin-left: -420px; } }
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.4em;
+    font-size: 22px;
     margin-bottom: 5px; }
+
+  h2 {
+    font-size: 16px; }
 
   p {
     font-size: 13px; }
@@ -1160,8 +1263,8 @@ textarea {
       position: relative;
       top: 0;
       left: 0;
-      display: block;
-      margin: -40px 0 10px; }
+      display: block !important;
+      margin: 0px 0 10px; }
 
   #fullPage-nav.right {
     display: none; }
@@ -1177,46 +1280,67 @@ textarea {
       font-size: 14px;
       padding: 0 20px; }
 
-  .intro .text h1 {
-    margin-bottom: 10px;
-    font-size: 1.6em; }
-  .intro .text p {
-    font-size: 14px; }
-  .intro .astronaut {
-    margin: 15px auto -25px;
-    background-size: 100%;
-    width: 100px;
-    height: 160px; }
-  .intro .rocket, .intro .satellite, .intro .spaceship, .intro .planet {
-    display: none; }
+  .intro {
+    padding: 0 15px; }
+    .intro .text h1 {
+      margin-bottom: 10px;
+      font-size: 24px; }
+    .intro .text p {
+      font-size: 14px; }
+    .intro .astronaut {
+      margin: 10px auto 0;
+      width: 126px;
+      height: 167px; }
+      .intro .astronaut .body {
+        background-size: 100%;
+        width: 100%;
+        height: 100%; }
+      .intro .astronaut .cord {
+        display: none; }
+    .intro .rocket, .intro .satellite, .intro .spaceship, .intro .planet {
+      display: none; }
 
-  .problem .laptop {
-    background-size: 100%;
-    width: 277px;
-    height: 321px;
+  .problem .desk {
     margin: 0;
-    top: -15px;
-    left: -120px; }
-    .problem .laptop .text {
-      width: 210px;
-      top: 30px;
-      left: 100%;
-      margin-left: 20px; }
-    .problem .laptop .hand {
+    top: -8px;
+    left: 0;
+    width: 100%;
+    padding-left: 40%; }
+    .problem .desk .laptop {
+      background-size: 100%;
+      width: 277px;
+      height: 321px;
+      left: auto;
+      right: 100%; }
+    .problem .desk .text {
+      width: 100%;
+      margin: 0;
+      padding: 28px 20px 0 20px;
+      position: static; }
+    .problem .desk .hand {
       background-size: 100%;
       width: 224px;
       height: 305px;
-      left: 100%;
-      top: 228px;
-      margin-left: 0; }
-    .problem .laptop .screen {
+      left: 50%;
+      top: 140px;
+      margin-left: 0;
+      display: none; }
+    .problem .desk .screen {
       background-size: 100%;
       width: 196px;
       height: 113px;
       top: 29px;
-      left: 64px; }
-    .problem .laptop .coffee {
-      display: none; }
+      margin-right: 17px;
+      right: 100%;
+      left: auto; }
+    .problem .desk .coffee {
+      background-size: 100%;
+      width: 86px;
+      height: 81px;
+      position: static;
+      margin: 20px 0 0 40px; }
+      .problem .desk .coffee .smoke {
+        display: none; }
 
   .themes .theme-options {
     height: 180px;
@@ -1247,8 +1371,8 @@ textarea {
     margin: 10px 0 15px;
     width: 100%; }
   .drops .left-col {
-    width: 220px;
-    margin: 0; }
+    width: 224px;
+    margin: 0 0 50px; }
   .drops .widget-container {
     height: 67px;
     width: 209px;
@@ -1258,6 +1382,8 @@ textarea {
       height: 65px; }
     .drops .widget-container.half {
       width: 101px; }
+    .drops .widget-container.chart {
+      display: none; }
   .drops .widget {
     background-size: 100% !important;
     width: 100% !important;
@@ -1265,7 +1391,24 @@ textarea {
     border-radius: 6px;
     border-width: 3px; }
   .drops .browser {
-    display: none; } }
+    display: none; }
+
+  .signup .text {
+    margin-bottom: 30px; }
+  .signup .subscribe-form {
+    padding: 0 110px 0 14px; }
+    .signup .subscribe-form input[type="email"] {
+      font-size: 15px;
+      height: 50px;
+      padding: 10px 15px; }
+    .signup .subscribe-form input[type="submit"] {
+      right: 13px;
+      font-size: 14px;
+      height: 50px;
+      width: 100px; }
+  .signup .share-btns a {
+    width: 60px;
+    height: 60px; } }
 @media print {
   * {
     background: transparent !important;

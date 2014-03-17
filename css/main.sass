@@ -265,6 +265,8 @@ textarea
     max-width: 850px
     margin: 0 auto
     opacity: 0
+    position: relative
+    z-index: 10
 
     h1
       font-size: 60px
@@ -274,12 +276,22 @@ textarea
       font-size: 22px
 
   .astronaut
-    @include bgImage("../images/astronaut.gif", 252px, 335px)
-    @include image2x("../images/astronaut@2x.gif", 252px, 335px)
+    width: 252px
+    height: 335px
     margin: 60px auto 0
-    @include animation(spaceSpin 15s infinite linear)
     position: relative
     z-index: 100
+
+    .body
+      @include bgImage("../images/astronaut.gif", 252px, 335px)
+      @include image2x("../images/astronaut@2x.gif", 252px, 335px)
+      @include position(absolute, 0px 0 0 0px)
+      @include animation(spaceSpin 15s infinite linear)
+
+    .cord
+      @include bgImage("../images/cord.gif", 275px, 530px)
+      @include image2x("../images/cord@2x.gif", 275px, 530px)
+      @include position(absolute, 135px 0 0 45%)
 
   .rocket
     @include bgImage("../images/rocket.png", 94px, 154px)
@@ -290,19 +302,22 @@ textarea
       position: relative
 
       .exhaust
-        @include bgImage("../images/exhaust@2x.gif", 42px, 82px)
-        @include position(absolute, 146px 0 0 26px)
+        @include bgImage("../images/exhaust.gif", 42px, 82px)
+        @include image2x("../images/exhaust@2x.gif", 42px, 82px)
+        @include position(absolute, 149px 0 0 26px)
 
   .spaceship
     @include bgImage("../images/spaceship.png", 94px, 80px)
     @include transform(rotate(-10deg))
     @include position(absolute, 28% 0 0 110%)
+    z-index: 20
 
     .wrapper
       position: relative
 
       .beams
         @include bgImage("../images/beams.gif", 72px, 78px)
+        @include image2x("../images/beams@2x.gif", 72px, 78px)
         @include position(absolute, 80px 0 0 12px)
 
   .satellite
@@ -314,11 +329,13 @@ textarea
       position: relative
 
       .signal
-        @include bgImage("../images/signal@2x.gif", 145px, 91px)
+        @include bgImage("../images/signal.gif", 145px, 91px)
+        @include image2x("../images/signal@2x.gif", 145px, 91px)
         @include position(absolute, 74px 0 0 26px)
 
   .planet
-    @include bgImage("../images/planet.png", 108px, 70px)
+    @include bgImage("../images/planet.gif", 120px, 70px)
+    @include image2x("../images/planet@2x.gif", 120px, 70px)
     @include position(absolute, 50% 0 0 110%)
 
 
@@ -330,7 +347,7 @@ textarea
     background: transparent
     @include transform(scale(0.2) translate(0,0) translateZ(0))
   50%
-    background: rgba(255,255,255,.4)
+    background: rgba(255,255,255,.3)
   100%
     background: transparent
     @include transform(scale(1) translate(-20px,-100px) translateZ(0))
@@ -341,7 +358,7 @@ textarea
     background: transparent
     @include transform(scale(0.2) translate(0,0) translateZ(0))
   50%
-    background: rgba(255,255,255,.4)
+    background: rgba(255,255,255,.3)
   100%
     background: transparent
     @include transform(scale(1) translate(20px,-100px) translateZ(0))
@@ -349,16 +366,23 @@ textarea
 .problem
   padding-right: 125px
 
-  .laptop
-    @include bgImage("../images/laptop.png", 554px, 642px)
-    @include image2x("../images/laptop@2x.png", 555px, 642px)
-    @include position(absolute, 50% 0 0 50%)
-    margin: -340px 0 0 -505px
+  .desk
+    width: 554px
+    height: 642px
+    @include position(absolute, 56% 0 0 50%)
+    margin: -340px 0 0 -560px
 
-    .wrapper
+    > .wrapper
       position: relative
       width: 100%
       height: 100%
+
+    .laptop
+      width: 100%
+      height: 100%
+      @include bgImage("../images/laptop.png", 554px, 642px)
+      @include image2x("../images/laptop@2x.png", 555px, 642px)
+      @include position(absolute, 0px 0 0 0px)
 
     .text
       @include position(absolute, 15px 0 0 96%)
@@ -377,9 +401,10 @@ textarea
       @include position(absolute, 58px 0 0 128px)
 
     .hand
-      @include bgImage("../images/hand.gif", 448px, 610px)
-      // @include image2x("../images/hand@2x.gif", 555px, 642px)
-      @include position(absolute, 290px 0 0 100%)
+      @include bgImage("../images/hand.gif", 400px, 570px)
+      @include image2x("../images/hand@2x.gif", 400px, 570px)
+      @include position(absolute, 292px 0 0 100%)
+      margin-left: -50px
 
     .coffee
       @include bgImage("../images/coffee.gif", 171px, 162px)
@@ -387,6 +412,7 @@ textarea
 
       .wrapper
         position: relative
+        height: 100%
 
         .smoke
           position: absolute
@@ -409,23 +435,23 @@ textarea
             @include transform(scale(0.2))
 
             &.s0
-              @include animation(smokeL 10s 0s infinite)
+              @include animation(smokeL 12s 0s infinite)
             &.s1
-              @include animation(smokeR 10s 1s infinite)
+              @include animation(smokeR 12s 1s infinite)
             &.s2
-              @include animation(smokeL 10s 2s infinite)
+              @include animation(smokeL 12s 2s infinite)
             &.s3
-              @include animation(smokeR 10s 3s infinite)
+              @include animation(smokeR 12s 3s infinite)
             &.s4
-              @include animation(smokeL 10s 4s infinite)
+              @include animation(smokeL 12s 4s infinite)
             &.s5
-              @include animation(smokeR 10s 5s infinite)
+              @include animation(smokeR 12s 5s infinite)
             &.s6
-              @include animation(smokeL 10s 6s infinite)
+              @include animation(smokeL 12s 6s infinite)
             &.s7
-              @include animation(smokeR 10s 7s infinite)
+              @include animation(smokeR 12s 7s infinite)
             &.s8
-              @include animation(smokeL 10s 8s infinite)
+              @include animation(smokeL 12s 8s infinite)
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -439,18 +465,28 @@ textarea
     width: 100%
     @include position(absolute, 0 0 100% 0)
     margin-bottom: 50px
-    @include animation-delay(1.5s)
+    @include animation-delay(2.8s)
     opacity: 0
 
     p
       max-width: 800px
       margin: 0 auto
 
+  .logos
+    @include position(absolute, 100% 0 0 0)
+    width: 100%
+    margin-top: 45px
+    @include animation-delay(2.8s)
+    opacity: 0
+
+    img
+      margin: 0 15px
+
   .theme-options
     height: 400px
     width: 100%
     @include position(absolute, 50% 0 0 0)
-    margin-top: -170px
+    margin-top: -180px
 
     .wrapper
       position: relative
@@ -489,41 +525,64 @@ textarea
             vertical-align: top
 
         &.theme-main
-          box-shadow: 0 12px 0 -5px rgba(0,0,0,.08), -30px 0 0 -20px rgba(0,0,0,.1), 30px 0 0 -20px rgba(0,0,0,.1)
-          @include bgImage("../images/theme-main.png", 488px, 388px)
-          @include image2x("../images/theme-main@2x.png", 488px, 388px)
-          height: 100%
-          width: 500px
+          box-shadow: 0 12px 0 -5px rgba(0,0,0,.08)
+          height: 0%
+          width: 0px
+          position: relative
+          z-index: 10
+          top: 0
+          left: 0
+          margin: 197px auto 0
+          display: block
+          border-width: 0
+          @include transition(all .4s .6s, width .4s 1s, border-width .2s .5s)
+
+          .image
+            @include bgImage("../images/theme-main.gif", 488px, 388px)
+            @include image2x("../images/theme-main@2x.gif", 488px, 388px)
+            display: none
+
+          &.open
+            width: 500px
+            height: 100%
+            margin-top: 0
+            border-width: 6px
 
         &.theme-1
+          @include bgImage("../images/theme-1.gif", 140px, 288px)
+          background-position: left 22px
+          width: 500px
           height: auto
           top: 40px
           bottom: 40px
+          display: none
 
         &.theme-2
+          @include bgImage("../images/theme-2.gif", 140px, 328px)
+          background-position: left 22px
+          width: 500px
           height: auto
           top: 20px
           bottom: 20px
+          display: none
 
         &.theme-3
+          @include bgImage("../images/theme-3.gif", 140px, 328px)
+          background-position: right 22px
+          width: 500px
           height: auto
           top: 20px
           bottom: 20px
+          display: none
 
         &.theme-4
+          @include bgImage("../images/theme-4.gif", 140px, 288px)
+          background-position: right 22px
+          width: 500px
           height: auto
           top: 40px
           bottom: 40px
-
-  .logos
-    @include position(absolute, 100% 0 0 0)
-    width: 100%
-    margin-top: 45px
-    @include animation-delay(1.5s)
-    opacity: 0
-
-    img
-      margin: 0 15px
+          display: none
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -678,7 +737,7 @@ textarea
     // @include bgImage("../images/fireworks.gif", 1350px, 880px)
     @include bgImage("../images/fireworks@2x.gif", 1012px, 660px)
     background-color: #f19849
-    background-position: center 100px
+    background-position: center center
     width: 100%
     height: 100%
     @include position(absolute, 100% 0 0 0px)
@@ -773,10 +832,9 @@ textarea
 
       &[type="submit"]
         border: 3px solid #563373
-        background-color: transparent
+        background-color: #ab65e6
         width: 140px
         border-radius: 0 10px 10px 0
-        padding: 8px
         height: 60px
         color: rgba(0,0,0,.5)
         font-family: "museo-sans", sans-serif
@@ -890,24 +948,24 @@ textarea
       margin: 35px auto -45px
 
   .problem
-    .laptop
-      margin-top: -315px
+    .desk
+      margin-top: -350px
       margin-left: -490px
-      background-size: 90%
       .text
         width: 380px
-        top: 10px
+        top: 0
         left: 90%
         margin-left: 40px
+      .laptop
+        background-size: 90%
       .pencil
         display: none
       .coffee
-        right: -480px
+        right: -460px
       .hand
         left: 90%
         background-size: 90%
         top: 258px
-        margin-left: -1px
       .screen
         background-size: 90%
         top: 53px
@@ -915,7 +973,7 @@ textarea
 
   .themes
     .theme-options
-      margin-top: -165px
+      margin-top: -180px
 
       .text
         margin-bottom: 45px
@@ -1005,8 +1063,10 @@ textarea
 
 @media (max-width: 768px)
   h1
-    font-size: 1.4em
+    font-size: 22px
     margin-bottom: 5px
+  h2
+    font-size: 16px
   p
     font-size: 13px
 
@@ -1019,8 +1079,8 @@ textarea
       position: relative
       top: 0
       left: 0
-      display: block
-      margin: -40px 0 10px
+      display: block !important
+      margin: 0px 0 10px
 
   #fullPage-nav.right
     display: none
@@ -1040,53 +1100,77 @@ textarea
         padding: 0 20px
 
   .intro
+    padding: 0 15px
     .text
       h1
         margin-bottom: 10px
-        font-size: 1.6em
+        font-size: 24px
       p
         font-size: 14px
     .astronaut
-      margin: 15px auto -25px
-      background-size: 100%
-      width: 100px
-      height: 160px
+      margin: 10px auto 0
+      width: 126px
+      height: 167px
+
+      .body
+        background-size: 100%
+        width: 100%
+        height: 100%
+
+      .cord
+        display: none
 
     .rocket,.satellite,.spaceship,.planet
       display: none
 
   .problem
-    .laptop
-      background-size: 100%
-      width: 277px
-      height: 321px
+    .desk
       margin: 0
-      top: -15px
-      left: -120px
+      top: -8px
+      left: 0
+      width: 100%
+      padding-left: 40%
+
+      .laptop
+        background-size: 100%
+        width: 277px
+        height: 321px
+        left: auto
+        right: 100%
 
       .text
-        width: 210px
-        top: 30px
-        left: 100%
-        margin-left: 20px
+        width: 100%
+        margin: 0
+        padding: 28px 20px 0 20px
+        position: static
 
       .hand
         background-size: 100%
         width: 224px
         height: 305px
-        left: 100%
-        top: 228px
+        left: 50%
+        top: 140px
         margin-left: 0
+        display: none
 
       .screen
         background-size: 100%
         width: 196px
         height: 113px
         top: 29px
-        left: 64px
+        margin-right: 17px
+        right: 100%
+        left: auto
 
       .coffee
-        display: none
+        background-size: 100%
+        width: 86px
+        height: 81px
+        position: static
+        margin: 20px 0 0 40px
+
+        .smoke
+          display: none
 
   .themes
     .theme-options
@@ -1126,8 +1210,8 @@ textarea
       width: 100%
 
     .left-col
-      width: 220px
-      margin: 0
+      width: 224px
+      margin: 0 0 50px
 
     .widget-container
       height: 67px
@@ -1141,6 +1225,9 @@ textarea
       &.half
         width: 101px
 
+      &.chart
+        display: none
+
     .widget
       background-size: 100% !important
       width: 100% !important
@@ -1150,6 +1237,28 @@ textarea
 
     .browser
       display: none
+
+  .signup
+    .text
+      margin-bottom: 30px
+
+    .subscribe-form
+      padding: 0 110px 0 14px
+
+      input[type="email"]
+        font-size: 15px
+        height: 50px
+        padding: 10px 15px
+
+      input[type="submit"]
+        right: 13px
+        font-size: 14px
+        height: 50px
+        width: 100px
+
+    .share-btns a
+      width: 60px
+      height: 60px
 
 
 @media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)
