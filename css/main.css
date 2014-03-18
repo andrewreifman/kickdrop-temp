@@ -959,7 +959,7 @@ textarea {
     position: absolute;
     top: 100%;
     left: 0px;
-    margin-top: 220px;
+    margin-top: 230px;
     -webkit-transition: top 0.5s 2.5s ease-out;
     -moz-transition: top 0.5s 2.5s ease-out;
     transition: top 0.5s 2.5s ease-out; }
@@ -970,7 +970,7 @@ textarea {
     right: 100%; }
   .drops.completed .browser {
     margin-left: -235px;
-    margin-top: -350px;
+    margin-top: -300px;
     border-color: #895528; }
     .drops.completed .browser .browser-bar {
       border-color: #895528; }
@@ -991,10 +991,13 @@ textarea {
 /*----------------------------------------------------------------------------------- */
 .signup {
   text-align: center;
-  background: #ab65e6 url("../images/stars.png") repeat center center; }
+  background: #ab65e6 url("../images/stars.png") repeat center center;
+  -webkit-animation: starPan 20s infinite linear;
+  -moz-animation: starPan 20s infinite linear;
+  animation: starPan 20s infinite linear; }
   .signup .text {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     -webkit-animation-delay: 0.8s;
     -moz-animation-delay: 0.8s;
     -ms-animation-delay: 0.8s;
