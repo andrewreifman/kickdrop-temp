@@ -17,7 +17,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  font-family: "museo-sans", sans-serif; }
+  font-family: "source-sans-pro", sans-serif; }
 
 ::-moz-selection, ::selection {
   background: #b3d4fc;
@@ -25,7 +25,7 @@ body {
 
 h1 {
   color: white;
-  font-size: 2.8em;
+  font-size: 2.9em;
   font-weight: 900;
   letter-spacing: -0.03em;
   margin: 0 0 15px;
@@ -41,9 +41,9 @@ p {
   color: black;
   color: rgba(0, 0, 0, 0.65);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
-  line-height: 1.4; }
+  line-height: 1.3; }
 
 hr {
   display: block;
@@ -128,19 +128,29 @@ textarea {
       background: url("../images/google.png") center center repeat-y; }
     .bottom-buttons a.signup-btn, .signup .share-btns a.signup-btn {
       width: auto;
-      float: right;
       margin: 0;
-      padding: 0 25px;
+      padding: 0 20px;
       text-decoration: none;
-      color: rgba(0, 0, 0, 0.45);
+      color: black;
       font-weight: 900;
       font-size: 15px;
-      line-height: 50px;
-      text-align: center; }
+      line-height: 44px;
+      height: 44px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.35);
+      position: fixed;
+      top: 15px;
+      right: 10px;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      transition: all 0.2s; }
+      .bottom-buttons a.signup-btn:hover, .signup .share-btns a.signup-btn:hover {
+        padding: 0 30px; }
     .bottom-buttons a:hover, .signup .share-btns a:hover {
-      box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.35), 0 0 0 3px rgba(0, 0, 0, 0.35);
       background-color: white;
-      color: black; }
+      color: black;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5); }
       .bottom-buttons a:hover span, .signup .share-btns a:hover span {
         opacity: 1;
         background-position: center -50px; }
@@ -216,7 +226,7 @@ textarea {
   background-color: transparent; }
 
 .fullPage-tooltip {
-  font-family: "museo-sans", sans-serif;
+  font-family: "source-sans-pro", sans-serif;
   font-weight: 700;
   font-size: 16;
   top: -1px; }
@@ -267,20 +277,24 @@ textarea {
   -moz-animation: starPan 20s infinite linear;
   animation: starPan 20s infinite linear; }
   .intro .text {
-    max-width: 850px;
+    max-width: 800px;
     margin: 0 auto;
     opacity: 0;
     position: relative;
     z-index: 10; }
     .intro .text h1 {
-      font-size: 60px;
-      margin-bottom: 25px; }
+      font-size: 80px;
+      margin-bottom: 20px; }
     .intro .text p {
-      font-size: 22px; }
+      font-size: 22px;
+      line-height: 1.3; }
+      .intro .text p span {
+        font-weight: 900;
+        font-size: 110%; }
   .intro .astronaut {
     width: 252px;
     height: 335px;
-    margin: 60px auto 0;
+    margin: 20px auto -40px;
     position: relative;
     z-index: 100; }
     .intro .astronaut .body {
@@ -301,9 +315,9 @@ textarea {
           background-size: 252px 335px; } }
     .intro .astronaut .cord {
       background: url("../images/cord.gif") no-repeat 0 0;
-      background-size: 275px 530px;
+      background-size: 275px 500px;
       width: 275px;
-      height: 530px;
+      height: 500px;
       display: block;
       position: absolute;
       top: 135px;
@@ -311,7 +325,7 @@ textarea {
       @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
         .intro .astronaut .cord {
           background: url("../images/cord@2x.gif") no-repeat 0 0;
-          background-size: 275px 530px; } }
+          background-size: 275px 500px; } }
   .intro .rocket {
     background: url("../images/rocket.png") no-repeat 0 0;
     background-size: 94px 154px;
@@ -514,8 +528,8 @@ textarea {
     .problem .desk .text {
       position: absolute;
       top: 15px;
-      left: 96%;
-      margin: 0 0 0 60px;
+      left: 100%;
+      margin: 0 0 0 40px;
       width: 420px;
       -webkit-animation-delay: 0.8s;
       -moz-animation-delay: 0.8s;
@@ -640,10 +654,10 @@ textarea {
     position: absolute;
     bottom: 100%;
     margin-bottom: 50px;
-    -webkit-animation-delay: 2.8s;
-    -moz-animation-delay: 2.8s;
-    -ms-animation-delay: 2.8s;
-    animation-delay: 2.8s;
+    -webkit-animation-delay: 2.6s;
+    -moz-animation-delay: 2.6s;
+    -ms-animation-delay: 2.6s;
+    animation-delay: 2.6s;
     opacity: 0; }
     .themes .text p {
       max-width: 800px;
@@ -653,10 +667,10 @@ textarea {
     top: 100%;
     width: 100%;
     margin-top: 45px;
-    -webkit-animation-delay: 2.8s;
-    -moz-animation-delay: 2.8s;
-    -ms-animation-delay: 2.8s;
-    animation-delay: 2.8s;
+    -webkit-animation-delay: 2.6s;
+    -moz-animation-delay: 2.6s;
+    -ms-animation-delay: 2.6s;
+    animation-delay: 2.6s;
     opacity: 0; }
     .themes .logos img {
       margin: 0 15px; }
@@ -797,14 +811,14 @@ textarea {
     top: 50%;
     right: 50%;
     width: 482px;
-    height: 700px;
-    margin: -350px 30px 0 0;
+    height: 654px;
+    margin: -330px 30px 0 0;
     -webkit-transition: all 0.25s 1s;
     -moz-transition: all 0.25s 1s;
     transition: all 0.25s 1s; }
     .drops .left-col .text {
       text-align: left;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       -webkit-animation-delay: 0.4s;
       -moz-animation-delay: 0.4s;
       -ms-animation-delay: 0.4s;
@@ -1019,7 +1033,7 @@ textarea {
       padding: 15px 20px;
       color: white;
       height: 60px;
-      font-family: "museo-sans", sans-serif;
+      font-family: "source-sans-pro", sans-serif;
       font-weight: 500;
       font-size: 18px;
       -webkit-transition: all 0.4s;
@@ -1039,7 +1053,7 @@ textarea {
       border-radius: 0 10px 10px 0;
       height: 60px;
       color: rgba(0, 0, 0, 0.5);
-      font-family: "museo-sans", sans-serif;
+      font-family: "source-sans-pro", sans-serif;
       font-weight: 900;
       font-size: 18px;
       position: absolute;
@@ -1075,7 +1089,8 @@ textarea {
       .signup .share-btns a.facebook span {
         background: url("../images/facebook-lg.png") center center repeat-y; }
       .signup .share-btns a:hover {
-        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(0, 0, 0, 0.45); }
+        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(0, 0, 0, 0.45);
+        padding: 0; }
         .signup .share-btns a:hover span {
           background-position: center -70px; }
 
@@ -1245,14 +1260,14 @@ textarea {
       margin-left: -420px; } }
 @media (max-width: 768px) {
   h1 {
-    font-size: 22px;
-    margin-bottom: 5px; }
+    font-size: 26px;
+    margin-bottom: 10px; }
 
   h2 {
-    font-size: 16px; }
+    font-size: 18px; }
 
   p {
-    font-size: 13px; }
+    font-size: 15px; }
 
   .section {
     padding: 0; }
@@ -1264,29 +1279,27 @@ textarea {
       top: 0;
       left: 0;
       display: block !important;
-      margin: 0px 0 10px; }
+      margin: -10px 0 15px; }
 
   #fullPage-nav.right {
     display: none; }
 
   .bottom-buttons a, .signup .share-btns a {
-    width: 44px;
-    height: 44px;
-    margin-right: 4px; }
-    .bottom-buttons a:hover span, .signup .share-btns a:hover span, .bottom-buttons a.share.active span, .signup .share-btns a.share.active span {
-      background-position: center center; }
+    display: none; }
     .bottom-buttons a.signup-btn, .signup .share-btns a.signup-btn {
-      line-height: 44px;
-      font-size: 14px;
-      padding: 0 20px; }
+      display: block;
+      width: 100%;
+      bottom: 10px;
+      padding: 0;
+      position: static; }
 
   .intro {
     padding: 0 15px; }
     .intro .text h1 {
-      margin-bottom: 10px;
-      font-size: 24px; }
+      display: none; }
     .intro .text p {
-      font-size: 14px; }
+      font-size: 15px;
+      line-height: 1.2; }
     .intro .astronaut {
       margin: 10px auto 0;
       width: 126px;
@@ -1300,115 +1313,27 @@ textarea {
     .intro .rocket, .intro .satellite, .intro .spaceship, .intro .planet {
       display: none; }
 
-  .problem .desk {
-    margin: 0;
-    top: -8px;
-    left: 0;
-    width: 100%;
-    padding-left: 40%; }
-    .problem .desk .laptop {
-      background-size: 100%;
-      width: 277px;
-      height: 321px;
-      left: auto;
-      right: 100%; }
-    .problem .desk .text {
-      width: 100%;
-      margin: 0;
-      padding: 28px 20px 0 20px;
-      position: static; }
-    .problem .desk .hand {
-      background-size: 100%;
-      width: 224px;
-      height: 305px;
-      left: 50%;
-      top: 140px;
-      margin-left: 0;
-      display: none; }
-    .problem .desk .screen {
-      background-size: 100%;
-      width: 196px;
-      height: 113px;
-      top: 29px;
-      margin-right: 17px;
-      right: 100%;
-      left: auto; }
-    .problem .desk .coffee {
-      background-size: 100%;
-      width: 86px;
-      height: 81px;
-      position: static;
-      margin: 20px 0 0 40px; }
-      .problem .desk .coffee .smoke {
-        display: none; }
-
-  .themes .theme-options {
-    height: 180px;
-    margin-top: -70px; }
-    .themes .theme-options .text {
-      margin: 0 0 15px;
-      padding: 0 15px; }
-    .themes .theme-options .wrapper .browser {
-      border-radius: 6px;
-      border-width: 3px;
-      width: 250px;
-      box-shadow: 0 4px rgba(0, 0, 0, 0.08); }
-      .themes .theme-options .wrapper .browser.theme-main {
-        background-size: 100%;
-        width: 250px;
-        margin-left: -125px;
-        box-shadow: 0 4px rgba(0, 0, 0, 0.08), -25px 0 0 -20px rgba(0, 0, 0, 0.1), 25px 0 0 -20px rgba(0, 0, 0, 0.1); }
-      .themes .theme-options .wrapper .browser .browser-bar {
-        height: 11px;
-        padding: 3px 0 0 3px;
-        border-width: 2px; }
-        .themes .theme-options .wrapper .browser .browser-bar span {
-          height: 4px;
-          width: 4px;
-          margin-right: 2px; }
-
-  .drops .text.mobile {
-    margin: 10px 0 15px;
-    width: 100%; }
-  .drops .left-col {
-    width: 224px;
-    margin: 0 0 50px; }
-  .drops .widget-container {
-    height: 67px;
-    width: 209px;
-    border: 0; }
-    .drops .widget-container.third {
-      width: 65px;
-      height: 65px; }
-    .drops .widget-container.half {
-      width: 101px; }
-    .drops .widget-container.chart {
-      display: none; }
-  .drops .widget {
-    background-size: 100% !important;
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 6px;
-    border-width: 3px; }
-  .drops .browser {
-    display: none; }
+  .problem, .themes, .drops {
+    display: none !important; }
 
   .signup .text {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    padding: 0 20px; }
   .signup .subscribe-form {
     padding: 0 110px 0 14px; }
     .signup .subscribe-form input[type="email"] {
-      font-size: 15px;
+      font-size: 16px;
       height: 50px;
       padding: 10px 15px; }
     .signup .subscribe-form input[type="submit"] {
       right: 13px;
-      font-size: 14px;
+      font-size: 16px;
       height: 50px;
       width: 100px; }
   .signup .share-btns a {
     width: 60px;
-    height: 60px; } }
+    height: 60px;
+    display: inline-block; } }
 @media print {
   * {
     background: transparent !important;

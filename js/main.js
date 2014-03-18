@@ -15,7 +15,7 @@ $(document).ready(function() {
     fixedElements: '.logo.fixed, .bottom-buttons',
     onLeave: function(index, direction){
       if(index == '1' && direction =='down'){
-        $('.logo .logo-text').delay(800).animate({'margin-top': '-200px'}, 300, 'easeInBack');
+        $('.logo.fixed .logo-text').delay(800).animate({'margin-top': '-200px'}, 300, 'easeInBack');
         $('.intro').addClass('intro-hidden');
       }
       if(index == '5' && direction =='up'){
@@ -24,7 +24,7 @@ $(document).ready(function() {
     },
     afterLoad: function(anchorLink){
       if(anchorLink == 'intro'){
-        $('.logo .logo-text').delay(800).animate({'margin-top': '0px'}, 200, 'easeOutBack');
+        $('.logo.fixed .logo-text').delay(800).animate({'margin-top': '0px'}, 200, 'easeOutBack');
         $('.intro').removeClass('intro-hidden');
       }
       if(anchorLink == 'problem'){
@@ -38,7 +38,7 @@ $(document).ready(function() {
           $('.theme-2').show().delay(800).animate({'margin-left': '-350px'}, 300, 'easeOutBack');
           $('.theme-3').show().delay(800).animate({'margin-left': '-150px'}, 300, 'easeOutBack');
           $('.theme-4').show().delay(800).animate({'margin-left': '-80px'}, 300, 'easeOutBack');
-        }, 3000);
+        }, 2600);
 
         $('.theme-main').addClass('open');
         setTimeout(function(){
@@ -63,13 +63,13 @@ $(document).ready(function() {
 
 
   // Logo animation
-  $('.logo').mouseenter(function(){
+  $('.logo.fixed').mouseenter(function(){
     if($(".intro").is('.intro-hidden')){
       $('.logo .logo-text').animate({'margin-top': '0px'}, 200, 'easeOutBack');
     }
   });
 
-  $('.logo').mouseleave(function(){
+  $('.logo.fixed').mouseleave(function(){
     if($(".intro").is('.intro-hidden')){
       $('.logo .logo-text').stop().animate({'margin-top': '-200px'}, 300, 'easeInBack');
     }
@@ -169,6 +169,9 @@ $(document).ready(function() {
   }
 
   spaceAnim();
+
+
+  $('.tooltip-btn').tooltip();
 
 
   // Share buttons popup js
